@@ -10,7 +10,7 @@ Por exemplo:
 <lmht>
     <corpo>
         <titulo1>Isso é um título</titulo1>
-        <p>Isto é um parágrafo.</p>
+        <p classe="minha-classe">Isto é um parágrafo.</p>
         <lista-simples>
             <item-lista>Itens podem ser adicionados usando a etiqueta item-lista.</item-lista>
             <item-lista>Cada item da lista é transformado em um item li do HTML.</item-lista>
@@ -26,7 +26,7 @@ Gera o equivalente em HTML:
 <html>
     <body>
         <h1>Isso é um título</h1>
-        <p>Isto é um parágrafo.</p>
+        <p class="minha-classe">Isto é um parágrafo.</p>
         <ul>
             <li>Itens podem ser adicionados usando a etiqueta item-lista.</li>
             <li>Cada item da lista é transformado em um item li do HTML.</li>
