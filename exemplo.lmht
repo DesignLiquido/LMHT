@@ -1,4 +1,7 @@
 <lmht>
+    <cabeça>
+
+    </cabeça>
     <corpo>
         <titulo1>Isso é um título</titulo1>
         <p classe="minha-classe">Isto é um parágrafo.</p>

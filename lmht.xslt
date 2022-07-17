@@ -19,10 +19,24 @@
             <xsl:apply-templates select="@*|node()" />
         </html>
     </xsl:template>
+
+    <!-- Especificação de `cabeça`, ou `cabeca` -->
+    <xsl:template match="lmht/cabeca|lmht/cabeça">
+        <head>
+            <xsl:apply-templates select="@*|node()" />
+        </head>
+    </xsl:template>
+
+    <!-- Especificação de `corpo` -->
     <xsl:template match="lmht/corpo">
         <body>
             <xsl:apply-templates select="@*|node()" />
         </body>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//artigo">
+        <article>
+            <xsl:apply-templates select="@*|node()" />
+        </article>
     </xsl:template>
     <xsl:template match="lmht/corpo//lista-numerada">
         <ol>
@@ -34,10 +48,15 @@
             <xsl:apply-templates select="@*|node()" />
         </ul>
     </xsl:template>
-    <xsl:template match="lmht/corpo//lista-simples/item-lista|corpo//lista-numerada/item-lista">
+    <xsl:template match="lmht/corpo//lista-simples/item-lista|lmht/corpo//lista-numerada/item-lista">
         <li>
             <xsl:apply-templates select="@*|node()" />
         </li>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//n|lmht/corpo//negrito">
+        <b>
+            <xsl:apply-templates select="@*|node()" />
+        </b>
     </xsl:template>
     <xsl:template match="lmht/corpo//titulo1">
         <h1>

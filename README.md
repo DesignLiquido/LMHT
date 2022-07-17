@@ -41,7 +41,11 @@ Para testar a transformação XSL, use:
 - [http://xsltransform.net](http://xsltransform.net);
 - [https://www.freeformatter.com/xsl-transformer.html](https://www.freeformatter.com/xsl-transformer.html).
 
-## Transformação em JS ou Node.js
+Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 3.0.
+
+## Bibliotecas de transformação por linguagem
+
+### JavaScript ou Node.js
 
 Para testar as transformações, utilizamos [xslt3](https://www.npmjs.com/package/xslt3), que usa a [saxon-js](https://www.npmjs.com/package/saxon-js). 
 
