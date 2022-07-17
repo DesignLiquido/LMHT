@@ -19,52 +19,52 @@
             <xsl:apply-templates select="@*|node()" />
         </html>
     </xsl:template>
-    <xsl:template match="corpo">
+    <xsl:template match="lmht/corpo">
         <body>
             <xsl:apply-templates select="@*|node()" />
         </body>
     </xsl:template>
-    <xsl:template match="corpo//lista-numerada">
+    <xsl:template match="lmht/corpo//lista-numerada">
         <ol>
             <xsl:apply-templates select="@*|node()" />
         </ol>
     </xsl:template>
-    <xsl:template match="corpo//lista-simples">
+    <xsl:template match="lmht/corpo//lista-simples">
         <ul>
             <xsl:apply-templates select="@*|node()" />
         </ul>
     </xsl:template>
-    <xsl:template match="corpo//lista-simples/item-lista|corpo//lista-numerada/item-lista">
+    <xsl:template match="lmht/corpo//lista-simples/item-lista|corpo//lista-numerada/item-lista">
         <li>
             <xsl:apply-templates select="@*|node()" />
         </li>
     </xsl:template>
-    <xsl:template match="corpo//titulo1">
+    <xsl:template match="lmht/corpo//titulo1">
         <h1>
             <xsl:apply-templates select="@*|node()" />
         </h1>
     </xsl:template>
-    <xsl:template match="corpo//titulo2">
+    <xsl:template match="lmht/corpo//titulo2">
         <h2>
             <xsl:apply-templates select="@*|node()" />
         </h2>
     </xsl:template>
-    <xsl:template match="corpo//titulo3">
+    <xsl:template match="lmht/corpo//titulo3">
         <h3>
             <xsl:apply-templates select="@*|node()" />
         </h3>
     </xsl:template>
-    <xsl:template match="corpo//titulo4">
+    <xsl:template match="lmht/corpo//titulo4">
         <h4>
             <xsl:apply-templates select="@*|node()" />
         </h4>
     </xsl:template>
-    <xsl:template match="corpo//titulo5">
+    <xsl:template match="lmht/corpo//titulo5">
         <h5>
             <xsl:apply-templates select="@*|node()" />
         </h5>
     </xsl:template>
-    <xsl:template match="corpo//titulo6">
+    <xsl:template match="lmht/corpo//titulo6">
         <h6>
             <xsl:apply-templates select="@*|node()" />
         </h6>
