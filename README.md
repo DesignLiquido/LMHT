@@ -43,6 +43,12 @@ Para testar a transformação XSL, use:
 
 Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 3.0.
 
+Há também um arquivo XSD para validação de arquivos na extensão `.lmht`. 
+
+Para testar a validação, use:
+
+- [https://www.liquid-technologies.com/online-xsd-validator](https://www.liquid-technologies.com/online-xsd-validator).
+
 ## Limitações
 
 LMHT transforma para HTML5. Tags não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
