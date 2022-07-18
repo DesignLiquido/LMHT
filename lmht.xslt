@@ -8,12 +8,6 @@
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="@classe">
-        <xsl:attribute name="class">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-
     <xsl:template match="lmht">
         <html>
             <xsl:apply-templates select="@*|node()" />
@@ -63,6 +57,40 @@
             <xsl:apply-templates select="@*|node()" />
         </b>
     </xsl:template>
+
+    <!-- Tabelas -->
+    <xsl:template match="lmht/corpo//tabela">
+        <table>
+            <xsl:apply-templates select="@*|node()" />
+        </table>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela|lmht/corpo//tabela/cabeça-tabela">
+        <thead>
+            <xsl:apply-templates select="@*|node()" />
+        </thead>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/celula-cabeca-tabela|lmht/corpo//tabela/cabeça-tabela/celula-cabeca-tabela">
+        <thead>
+            <xsl:apply-templates select="@*|node()" />
+        </thead>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/célula-cabeca-tabela|lmht/corpo//tabela/cabeça-tabela/célula-cabeca-tabela">
+        <thead>
+            <xsl:apply-templates select="@*|node()" />
+        </thead>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/celula-cabeça-tabela|lmht/corpo//tabela/cabeça-tabela/celula-cabeça-tabela">
+        <thead>
+            <xsl:apply-templates select="@*|node()" />
+        </thead>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/célula-cabeça-tabela|lmht/corpo//tabela/cabeça-tabela/célula-cabeça-tabela">
+        <thead>
+            <xsl:apply-templates select="@*|node()" />
+        </thead>
+    </xsl:template>
+
+    <!-- Títulos -->
     <xsl:template match="lmht/corpo//titulo1">
         <h1>
             <xsl:apply-templates select="@*|node()" />
@@ -92,5 +120,12 @@
         <h6>
             <xsl:apply-templates select="@*|node()" />
         </h6>
+    </xsl:template>
+
+    <!-- Atributos independentes de tags -->
+    <xsl:template match="@classe">
+        <xsl:attribute name="class">
+            <xsl:value-of select="." />
+        </xsl:attribute>
     </xsl:template>
 </xsl:transform>
