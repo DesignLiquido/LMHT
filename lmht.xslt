@@ -37,6 +37,8 @@
             <xsl:apply-templates select="@*|node()" />
         </code>
     </xsl:template>
+
+    <!-- Listas -->
     <xsl:template match="lmht/corpo//lista-numerada">
         <ol>
             <xsl:apply-templates select="@*|node()" />
@@ -53,9 +55,9 @@
         </li>
     </xsl:template>
     <xsl:template match="lmht/corpo//n|lmht/corpo//negrito">
-        <b>
+        <strong>
             <xsl:apply-templates select="@*|node()" />
-        </b>
+        </strong>
     </xsl:template>
 
     <!-- Tabelas -->
@@ -69,25 +71,30 @@
             <xsl:apply-templates select="@*|node()" />
         </thead>
     </xsl:template>
-    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/celula-cabeca-tabela|lmht/corpo//tabela/cabeça-tabela/celula-cabeca-tabela">
-        <thead>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/linha|lmht/corpo//tabela/cabeça-tabela/linha">
+        <th>
             <xsl:apply-templates select="@*|node()" />
-        </thead>
+        </th>
     </xsl:template>
-    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/célula-cabeca-tabela|lmht/corpo//tabela/cabeça-tabela/célula-cabeca-tabela">
-        <thead>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/linha/celula|lmht/corpo//tabela/cabeça-tabela/linha/celula">
+        <td>
             <xsl:apply-templates select="@*|node()" />
-        </thead>
+        </td>
     </xsl:template>
-    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/celula-cabeça-tabela|lmht/corpo//tabela/cabeça-tabela/celula-cabeça-tabela">
-        <thead>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/linha/célula|lmht/corpo//tabela/cabeça-tabela/linha/célula">
+        <td>
             <xsl:apply-templates select="@*|node()" />
-        </thead>
+        </td>
     </xsl:template>
-    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/célula-cabeça-tabela|lmht/corpo//tabela/cabeça-tabela/célula-cabeça-tabela">
-        <thead>
+    <xsl:template match="lmht/corpo//tabela/corpo-tabela">
+        <tbody>
             <xsl:apply-templates select="@*|node()" />
-        </thead>
+        </tbody>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/corpo-tabela/linha">
+        <tbody>
+            <xsl:apply-templates select="@*|node()" />
+        </tbody>
     </xsl:template>
 
     <!-- Títulos -->
