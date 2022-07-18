@@ -72,19 +72,19 @@
         </thead>
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/cabeca-tabela/linha|lmht/corpo//tabela/cabeça-tabela/linha">
+        <tr>
+            <xsl:apply-templates select="@*|node()" />
+        </tr>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/linha/celula|lmht/corpo//tabela/cabeça-tabela/linha/celula">
         <th>
             <xsl:apply-templates select="@*|node()" />
         </th>
     </xsl:template>
-    <xsl:template match="lmht/corpo//tabela/cabeca-tabela/linha/celula|lmht/corpo//tabela/cabeça-tabela/linha/celula">
-        <td>
-            <xsl:apply-templates select="@*|node()" />
-        </td>
-    </xsl:template>
     <xsl:template match="lmht/corpo//tabela/cabeca-tabela/linha/célula|lmht/corpo//tabela/cabeça-tabela/linha/célula">
-        <td>
+        <th>
             <xsl:apply-templates select="@*|node()" />
-        </td>
+        </th>
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/corpo-tabela">
         <tbody>
@@ -92,9 +92,14 @@
         </tbody>
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/corpo-tabela/linha">
-        <tbody>
+        <tr>
             <xsl:apply-templates select="@*|node()" />
-        </tbody>
+        </tr>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/corpo-tabela/linha/celula|lmht/corpo//tabela/corpo-tabela/linha/célula">
+        <td>
+            <xsl:apply-templates select="@*|node()" />
+        </td>
     </xsl:template>
 
     <!-- Títulos -->
