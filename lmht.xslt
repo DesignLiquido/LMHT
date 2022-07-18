@@ -38,6 +38,11 @@
             <xsl:apply-templates select="@*|node()" />
         </article>
     </xsl:template>
+    <xsl:template match="lmht/corpo//codigo|lmht/corpo//código">
+        <code>
+            <xsl:apply-templates select="@*|node()" />
+        </code>
+    </xsl:template>
     <xsl:template match="lmht/corpo//lista-numerada">
         <ol>
             <xsl:apply-templates select="@*|node()" />

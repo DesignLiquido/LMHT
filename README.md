@@ -43,14 +43,34 @@ Para testar a transformação XSL, use:
 
 Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 3.0.
 
+## Limitações
+
+LMHT transforma para HTML5. Tags não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
+
 ## Bibliotecas de transformação por linguagem
+
+### .NET em geral (C#, VB.NET, IronPython, PowerShell)
+
+A forma mais fácil de testar é pelo PowerShell, mas esse exemplo pode ser facilmente replicado para as demais linguagens.
+
+```powershell
+$xslt = New-Object System.Xml.Xsl.XslCompiledTransform;
+$xslt.load("lmht.xslt");
+$xslt.Transform("exemplo.lmht", "exemplo.html");
+```
 
 ### JavaScript ou Node.js
 
-Para testar as transformações, utilizamos [xslt3](https://www.npmjs.com/package/xslt3), que usa a [saxon-js](https://www.npmjs.com/package/saxon-js). 
+Pode ser utilizado [xslt3](https://www.npmjs.com/package/xslt3), que usa a [saxon-js](https://www.npmjs.com/package/saxon-js). 
 
 Um comando para PowerShell pode ser o seguinte:
 
 ```powershell
 xslt3 "-s:exemplo.lmht" "-xsl:lmht.xslt" "-o:exemplo.html" -t
+```
+
+Para bash, zsh, etc., não é necessário usar as aspas duplas.
+
+```bash
+xslt3 -s:exemplo.lmht -xsl:lmht.xslt -o:exemplo.html -t
 ```

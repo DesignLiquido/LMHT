@@ -9,6 +9,13 @@
             <item-lista>Itens podem ser adicionados usando a etiqueta item-lista.</item-lista>
             <item-lista>Cada item da lista é transformado em um item li do HTML.</item-lista>
             <item-lista>Não apenas etiquetas são modificadas, como também seus atributos.</item-lista>
+            <lista-numerada>
+                <item-lista>Uma lista pode ser colocada dentro de outra.</item-lista>
+            </lista-numerada>
         </lista-simples>
+
+        <codigo>
+            Isso é um teste com código.
+        </codigo>
     </corpo>
 </lmht>
