@@ -53,6 +53,34 @@ Para testar a validação, use:
 
 LMHT transforma para HTML5. Tags não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
 
+## Mapeamentos entre estruturas LMHT e _tags_ HTML
+
+| LMHT          | HTML    |
+| ------------- | ------- |
+| artigo        | article |
+| cabeca        | head    |
+| cabeça        | head    |
+| cabeca-tabela | head    |
+| cabeça-tabela | head    |
+| celula        | td      |
+| célula        | td      |
+| codigo        | code    |
+| código        | code    |
+| corpo         | body    |
+| corpo-tabela  | tbody   |
+| item-lista    | li      |
+| linha         | tr      |
+| lmht          | html    |
+| negrito       | strong  |
+| tabela        | table   |
+| titulo1       | h1      |
+| titulo2       | h2      |
+| titulo3       | h3      |
+| titulo4       | h4      |
+| titulo5       | h5      |
+| titulo6       | h6      |
+
+
 ## Bibliotecas de transformação por linguagem
 
 ### .NET em geral (C#, VB.NET, IronPython, PowerShell)
