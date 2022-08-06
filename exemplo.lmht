@@ -20,6 +20,8 @@
             Isso é um teste com código.
         </codigo>
 
+        <linha-horizontal />
+
         <tabela>
             <cabeça-tabela>
                 <linha>

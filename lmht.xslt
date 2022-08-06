@@ -32,10 +32,51 @@
             <xsl:apply-templates select="@*|node()" />
         </article>
     </xsl:template>
+    <xsl:template match="lmht/corpo//citacao|lmht/corpo//citação">
+        <blockquote>
+            <xsl:apply-templates select="@*|node()" />
+        </blockquote>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//botao|lmht/corpo//botão">
+        <button>
+            <xsl:apply-templates select="@*|node()" />
+        </button>
+    </xsl:template>
     <xsl:template match="lmht/corpo//codigo|lmht/corpo//código">
         <code>
             <xsl:apply-templates select="@*|node()" />
         </code>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//divisao|lmht/corpo//divisão">
+        <div>
+            <xsl:apply-templates select="@*|node()" />
+        </div>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//italico|lmht/corpo//itálico">
+        <em>
+            <xsl:apply-templates select="@*|node()" />
+        </em>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//linha-horizontal">
+        <hr />
+    </xsl:template>
+    <xsl:template match="lmht/corpo//principal">
+        <main>
+            <xsl:apply-templates select="@*|node()" />
+        </main>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//quebra-linha">
+        <br />
+    </xsl:template>
+    <xsl:template match="lmht/corpo//riscado">
+        <s>
+            <xsl:apply-templates select="@*|node()" />
+        </s>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//secao|lmht/corpo//seção">
+        <section>
+            <xsl:apply-templates select="@*|node()" />
+        </section>
     </xsl:template>
 
     <!-- Listas -->
