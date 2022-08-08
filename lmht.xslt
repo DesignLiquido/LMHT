@@ -27,20 +27,25 @@
             <xsl:apply-templates select="@*|node()" />
         </body>
     </xsl:template>
+    <xsl:template match="lmht/corpo//abreviacao|lmht/corpo//abreviação">
+        <abbr>
+            <xsl:apply-templates select="@*|node()" />
+        </abbr>
+    </xsl:template>
     <xsl:template match="lmht/corpo//artigo">
         <article>
             <xsl:apply-templates select="@*|node()" />
         </article>
     </xsl:template>
-    <xsl:template match="lmht/corpo//citacao|lmht/corpo//citação">
-        <blockquote>
-            <xsl:apply-templates select="@*|node()" />
-        </blockquote>
-    </xsl:template>
     <xsl:template match="lmht/corpo//botao|lmht/corpo//botão">
         <button>
             <xsl:apply-templates select="@*|node()" />
         </button>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//citacao|lmht/corpo//citação">
+        <blockquote>
+            <xsl:apply-templates select="@*|node()" />
+        </blockquote>
     </xsl:template>
     <xsl:template match="lmht/corpo//codigo|lmht/corpo//código">
         <code>
@@ -51,6 +56,11 @@
         <div>
             <xsl:apply-templates select="@*|node()" />
         </div>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//endereco|lmht/corpo//endereço">
+        <address>
+            <xsl:apply-templates select="@*|node()" />
+        </address>
     </xsl:template>
     <xsl:template match="lmht/corpo//italico|lmht/corpo//itálico">
         <em>
