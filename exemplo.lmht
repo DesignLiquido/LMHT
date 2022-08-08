@@ -16,6 +16,8 @@
             </item-lista>
         </lista-simples>
 
+        <abreviacao titulo="World Health Organization">WHO</abreviacao>
+
         <codigo>
             Isso é um teste com código.
         </codigo>

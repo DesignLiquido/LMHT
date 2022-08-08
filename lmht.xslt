@@ -29,7 +29,10 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//abreviacao|lmht/corpo//abreviação">
         <abbr>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:attribute name="title">
+                <xsl:value-of select="@titulo"/>
+            </xsl:attribute>
+            <xsl:apply-templates select="@title|node()" />
         </abbr>
     </xsl:template>
     <xsl:template match="lmht/corpo//artigo">
