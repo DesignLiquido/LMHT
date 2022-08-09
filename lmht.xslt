@@ -188,9 +188,34 @@
         </h6>
     </xsl:template>
 
-    <!-- Atributos independentes de tags -->
+    <!-- Atributos independentes de tags (globais) -->
+    <xsl:template match="@arrastavel|@arrastável">
+        <xsl:attribute name="draggable">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
     <xsl:template match="@classe">
         <xsl:attribute name="class">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@chave-acesso">
+        <xsl:attribute name="accesskey">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@conteudo-editavel">
+        <xsl:attribute name="contenteditable">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@direcao-texto|@direção-texto">
+        <xsl:attribute name="dir">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@escondido">
+        <xsl:attribute name="hidden">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
