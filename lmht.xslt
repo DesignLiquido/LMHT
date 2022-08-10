@@ -219,4 +219,34 @@
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
+    <xsl:template match="@idioma">
+        <xsl:attribute name="lang">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@verificar-grafia">
+        <xsl:attribute name="spellcheck">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@estilo">
+        <xsl:attribute name="style">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@indice-tab">
+        <xsl:attribute name="tabindex">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@titulo">
+        <xsl:attribute name="title">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@traduzir">
+        <xsl:attribute name="translate">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
 </xsl:transform>
