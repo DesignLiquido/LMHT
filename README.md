@@ -120,5 +120,17 @@ arquivo_lmht = ET.parse("exemplo.lmht")
 xslt = ET.parse("lmht.xslt")
 transform = ET.XSLT(xslt)
 conteudo_html = transform(arquivo_lmht)
-conteudo_html.write("exemplo2.html", encoding="utf-8")
+conteudo_html.write("exemplo.html", encoding="utf-8")
+```
+
+# Ruby
+
+Primeiro instale o pacote [ruby-xslt](https://github.com/glejeune/ruby-xslt). Essa biblioteca reclama da versão 2.0 do XSL, mas faz a transformação assim mesmo.
+
+```ruby
+require 'xml/xslt'
+
+xslt.xml = "exemplo.lmht"
+xslt.xsl = "lmht.xslt"
+xslt.save('exemplo.html')
 ```
