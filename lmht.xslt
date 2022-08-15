@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-    <xsl:output method="html" doctype-public="XSLT-compat" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
+    <xsl:output method="html" doctype-public="-//W3C//DTD XHTML 1.1//PT" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
 
     <xsl:template match="@*|node()">
         <xsl:copy>
@@ -34,9 +34,15 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//abreviacao|lmht/corpo//abreviação">
         <abbr>
-            <xsl:attribute name="title">
-                <xsl:value-of select="@titulo" />
-            </xsl:attribute>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'titulo'">
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
             <xsl:apply-templates select="@title|node()" />
         </abbr>
     </xsl:template>
@@ -137,6 +143,55 @@
         <em>
             <xsl:apply-templates select="@*|node()" />
         </em>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//ligacao|lmht/corpo/ligação">
+        <a>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'alvo'">
+                        <xsl:attribute name="target">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'destino'">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'idioma'">
+                        <xsl:attribute name="hreflang">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'midia'">
+                        <xsl:attribute name="media">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome-arquivo'">
+                        <xsl:attribute name="download">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'politica-referencia'">
+                        <xsl:attribute name="referrerpolicy">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'relacionamento'">
+                        <xsl:attribute name="rel">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'tipo'">
+                        <xsl:attribute name="type">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="@download|@href|@hreflang|@media|@ping|@referrerpolicy|@rel|@target|@type|node()" />
+        </a>
     </xsl:template>
     <xsl:template match="lmht/corpo//linha-horizontal">
         <hr />
