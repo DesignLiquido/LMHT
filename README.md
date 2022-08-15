@@ -108,3 +108,17 @@ Para bash, zsh, etc., não é necessário usar as aspas duplas.
 ```bash
 xslt3 -s:exemplo.lmht -xsl:lmht.xslt -o:exemplo.html -t
 ```
+
+# Python
+
+Primeiro instale o pacote [lxml](https://pypi.org/project/lxml/). 
+
+```python
+import lxml.etree as ET
+
+arquivo_lmht = ET.parse("exemplo.lmht")
+xslt = ET.parse("lmht.xslt")
+transform = ET.XSLT(xslt)
+conteudo_html = transform(arquivo_lmht)
+conteudo_html.write("exemplo2.html", encoding="utf-8")
+```
