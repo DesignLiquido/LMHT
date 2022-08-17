@@ -6,7 +6,7 @@
         <titulo1>Isso é um título</titulo1>
         <p classe="minha-classe">Isto é um parágrafo. <negrito>Isso é um texto em negrito.</negrito></p>
         <lista-simples>
-            <item-lista>Itens podem ser adicionados usando a etiqueta item-lista.</item-lista>
+            <item-lista classe="um-teste">Itens podem ser adicionados usando a etiqueta item-lista.</item-lista>
             <item-lista>Cada item da lista é transformado em um item li do HTML.</item-lista>
             <item-lista>Não apenas etiquetas são modificadas, como também seus atributos.</item-lista>
             <item-lista>

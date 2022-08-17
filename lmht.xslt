@@ -247,7 +247,7 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
-            <xsl:apply-templates select="node()" />
+            <xsl:apply-templates select="@*|node()" />
         </a>
     </xsl:template>
     <xsl:template match="lmht/corpo//linha-horizontal">
