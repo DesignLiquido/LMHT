@@ -142,6 +142,22 @@ $xslt.load("lmht.xslt");
 $xslt.Transform("exemplo.lmht", "exemplo.html");
 ```
 
+### Groovy
+
+Usando [`groovysh`](https://groovy-lang.org/groovysh.html): 
+
+```groovy
+xslt = new File("lmht.xslt").getText()
+stringReader = new StringReader(xslt)
+stringSource = new javax.xml.transform.stream.StreamSource(stringReader)
+transformer = javax.xml.transform.TransformerFactory.newInstance().newTransformer(stringSource)
+exemplo = new File("exemplo.lmht").getText()
+html = new FileOutputStream("exemplo.html")
+transformer.transform(new javax.xml.transform.stream.StreamSource(new StringReader(exemplo)), new javax.xml.transform.stream.StreamResult(html))
+```
+
+Exemplo funciona para Groovy e Java, com as devidas adaptações.
+
 ### JavaScript ou Node.js
 
 Pode ser utilizado [xslt3](https://www.npmjs.com/package/xslt3), que usa a [saxon-js](https://www.npmjs.com/package/saxon-js). 
