@@ -350,7 +350,7 @@
             <xsl:apply-templates select="@*|node()" />
         </object>
     </xsl:template>
-    <xsl:template match="lmht/corpo//p">
+    <xsl:template match="lmht/corpo//p|lmht/corpo//paragrafo|lmht/corpo//parágrafo">
         <p>
             <xsl:apply-templates select="@*|node()" />
         </p>
@@ -398,6 +398,11 @@
             <xsl:apply-templates select="@*|node()" />
         </noscript>
     </xsl:template>
+    <xsl:template match="lmht/corpo//sobrescrito">
+        <sup>
+            <xsl:apply-templates select="@*|node()" />
+        </sup>
+    </xsl:template>
     <xsl:template match="lmht/corpo//sublinhado">
         <u>
             <xsl:apply-templates select="@*|node()" />
@@ -407,11 +412,6 @@
         <sub>
             <xsl:apply-templates select="@*|node()" />
         </sub>
-    </xsl:template>
-    <xsl:template match="lmht/corpo//sobrescrito">
-        <sup>
-            <xsl:apply-templates select="@*|node()" />
-        </sup>
     </xsl:template>
 
     <!-- Tabelas -->

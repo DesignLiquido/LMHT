@@ -12,9 +12,9 @@ Por exemplo:
         <titulo1>Isso é um título</titulo1>
         <p classe="minha-classe">Isto é um parágrafo.</p>
         <lista-simples>
-            <item-lista>Itens podem ser adicionados usando a etiqueta item-lista.</item-lista>
+            <item-lista>Itens podem ser adicionados usando a estrutura item-lista.</item-lista>
             <item-lista>Cada item da lista é transformado em um item li do HTML.</item-lista>
-            <item-lista>Não apenas etiquetas são modificadas, como também seus atributos.</item-lista>
+            <item-lista>Não apenas estrutura são modificadas, como também seus atributos.</item-lista>
         </lista-simples>
     </corpo>
 </lmht>
@@ -28,9 +28,9 @@ Gera o equivalente em HTML:
         <h1>Isso é um título</h1>
         <p class="minha-classe">Isto é um parágrafo.</p>
         <ul>
-            <li>Itens podem ser adicionados usando a etiqueta item-lista.</li>
+            <li>Itens podem ser adicionados usando a estrutura item-lista.</li>
             <li>Cada item da lista é transformado em um item li do HTML.</li>
-            <li>Não apenas etiquetas são modificadas, como também seus atributos.</li>
+            <li>Não apenas estrutura são modificadas, como também seus atributos.</li>
         </ul>
     </body>
 </html>
@@ -51,34 +51,83 @@ Para testar a validação, use:
 
 ## Limitações
 
-LMHT transforma para HTML5. Tags não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
+LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
 
 ## Mapeamentos entre estruturas LMHT e _tags_ HTML
 
-| LMHT          | HTML    |
-| ------------- | ------- |
-| artigo        | article |
-| cabeca        | head    |
-| cabeça        | head    |
-| cabeca-tabela | head    |
-| cabeça-tabela | head    |
-| celula        | td      |
-| célula        | td      |
-| codigo        | code    |
-| código        | code    |
-| corpo         | body    |
-| corpo-tabela  | tbody   |
-| item-lista    | li      |
-| linha         | tr      |
-| lmht          | html    |
-| negrito       | strong  |
-| tabela        | table   |
-| titulo1       | h1      |
-| titulo2       | h2      |
-| titulo3       | h3      |
-| titulo4       | h4      |
-| titulo5       | h5      |
-| titulo6       | h6      |
+| LMHT                  | HTML       |
+| --------------------- | ---------- |
+| area-texto            | textarea   |
+| área-texto            | textarea   |
+| artigo                | article    |
+| botao                 | button     |
+| botão                 | button     |
+| cabeca                | head       |
+| cabeça                | head       |
+| cabeca-tabela         | head       |
+| cabeça-tabela         | head       |
+| celula                | td         |
+| célula                | td         |
+| citacao               | blockquote |
+| citação               | blockquote |
+| codigo                | code       |
+| código                | code       |
+| corpo                 | body       |
+| corpo-tabela          | tbody      |
+| detalhes              | details    |
+| divisao               | div        |
+| divisão               | div        |
+| endereco              | address    |
+| endereço              | address    |
+| envelope-texto        | span       |
+| exemplo               | samp       |
+| formulario            | form       |
+| formulário            | form       |
+| imagem                | img        |
+| italico               | em         |
+| itálico               | em         |
+| item-lista            | li         |
+| ligacao               | a          |
+| ligação               | a          |
+| linha                 | tr         |
+| linha-horizontal      | hr         |
+| lista-numerada        | ol         |
+| lista-simples         | ul         |
+| lmht                  | html       |
+| navegacao             | nav        |
+| navegação             | nav        |
+| negrito               | strong     |
+| objeto                | object     |
+| p                     | p          |
+| paragrafo             | p          |
+| parágrafo             | p          |
+| preformatado          | pre        |
+| principal             | main       |
+| quebra-linha          | br         |
+| quebra-linha-oportuna | br         |
+| riscado               | s          |
+| secao                 | section    |
+| seção                 | section    |
+| selecao               | select     |
+| seleção               | select     |
+| sem-script            | noscript   |
+| sobrescrito           | sup        |
+| subscrito             | sub        |
+| sublinhado            | u          |
+| sumario               | summary    |
+| sumário               | summary    |
+| tabela                | table      |
+| teclado               | kbd        |
+| tempo                 | time       |
+| texto-pequeno         | small      |
+| titulo1               | h1         |
+| titulo2               | h2         |
+| titulo3               | h3         |
+| titulo4               | h4         |
+| titulo5               | h5         |
+| titulo6               | h6         |
+| variavel              | var        |
+| variável              | var        |
 
 
 ## Bibliotecas de transformação por linguagem
