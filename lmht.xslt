@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
-    <xsl:output method="html" doctype-public="-//W3C//DTD XHTML 1.1//PT" doctype-system="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
+<xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
+    <xsl:output method="html" type="text/html" version="5.0" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
+    <xsl:variable name="atributosGlobais">|class|dir|</xsl:variable>
 
-    <xsl:template match="@*|node()">
-        <xsl:copy>
-            <xsl:apply-templates select="@*|node()" />
-        </xsl:copy>
+    <!-- Atributos independentes de tags (globais) -->
+    <xsl:template match="@arrastavel|@arrastável">
+        <xsl:attribute name="draggable">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@classe">
+        <xsl:attribute name="class">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@chave-acesso">
+        <xsl:attribute name="accesskey">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@conteudo-editavel">
+        <xsl:attribute name="contenteditable">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@direcao-texto|@direção-texto">
+        <xsl:attribute name="dir">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@escondido">
+        <xsl:attribute name="hidden">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@idioma">
+        <xsl:attribute name="lang">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@verificar-grafia">
+        <xsl:attribute name="spellcheck">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@estilo">
+        <xsl:attribute name="style">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@indice-tab">
+        <xsl:attribute name="tabindex">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@titulo">
+        <xsl:attribute name="title">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@traduzir">
+        <xsl:attribute name="translate">
+            <xsl:value-of select="." />
+        </xsl:attribute>
     </xsl:template>
 
     <xsl:template match="lmht">
@@ -190,7 +247,7 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
-            <xsl:apply-templates select="@download|@href|@hreflang|@media|@ping|@referrerpolicy|@rel|@target|@type|node()" />
+            <xsl:apply-templates select="node()" />
         </a>
     </xsl:template>
     <xsl:template match="lmht/corpo//linha-horizontal">
@@ -228,6 +285,11 @@
         <object>
             <xsl:apply-templates select="@*|node()" />
         </object>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//p">
+        <p>
+            <xsl:apply-templates select="@*|node()" />
+        </p>
     </xsl:template>
     <xsl:template match="lmht/corpo//preformatado">
         <pre>
@@ -386,67 +448,5 @@
         <var>
             <xsl:apply-templates select="@*|node()" />
         </var>
-    </xsl:template>
-
-    <!-- Atributos independentes de tags (globais) -->
-    <xsl:template match="@arrastavel|@arrastável">
-        <xsl:attribute name="draggable">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@classe">
-        <xsl:attribute name="class">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@chave-acesso">
-        <xsl:attribute name="accesskey">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@conteudo-editavel">
-        <xsl:attribute name="contenteditable">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@direcao-texto|@direção-texto">
-        <xsl:attribute name="dir">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@escondido">
-        <xsl:attribute name="hidden">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@idioma">
-        <xsl:attribute name="lang">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@verificar-grafia">
-        <xsl:attribute name="spellcheck">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@estilo">
-        <xsl:attribute name="style">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@indice-tab">
-        <xsl:attribute name="tabindex">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@titulo">
-        <xsl:attribute name="title">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@traduzir">
-        <xsl:attribute name="translate">
-            <xsl:value-of select="." />
-        </xsl:attribute>
     </xsl:template>
 </xsl:transform>

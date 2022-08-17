@@ -18,7 +18,7 @@
 
         <abreviacao titulo="World Health Organization">WHO</abreviacao>
 
-        <ligacao destino="http://designliquido.com.br" alvo="_blank">Teste</ligacao>
+        <ligacao classe="teste" destino="http://designliquido.com.br" alvo="_blank">Teste</ligacao>
 
         <codigo>
             Isso é um teste com código.
