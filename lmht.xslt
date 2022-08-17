@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
-    <xsl:output method="html" type="text/html" version="5.0" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
+    <xsl:output method="html" version="5.0" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
     <xsl:variable name="atributosGlobais">|class|dir|</xsl:variable>
 
     <!-- Atributos independentes de tags (globais) -->
@@ -105,7 +105,71 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//area-texto|lmht/corpo//área-texto">
         <textarea>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'autofoco'">
+                        <xsl:attribute name="autofocus">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'colunas'">
+                        <xsl:attribute name="cols">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'direcao-texto' or name() = 'direção-texto'">
+                        <xsl:attribute name="dirname">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'desabilitada'">
+                        <xsl:attribute name="disabled">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'formulario' or name() = 'formulário'">
+                        <xsl:attribute name="disabled">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'largura-maxima' or name() = 'largura-máxima'">
+                        <xsl:attribute name="maxlength">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'dica-campo'">
+                        <xsl:attribute name="placeholder">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'somente-leitura'">
+                        <xsl:attribute name="readonly">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'obrigatorio' or name() = 'obrigatório'">
+                        <xsl:attribute name="required">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'linhas'">
+                        <xsl:attribute name="rows">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'quebra-automatica' or name() = 'quebra-automática'">
+                        <xsl:attribute name="wrap">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </textarea>
     </xsl:template>
     <xsl:template match="lmht/corpo//artigo">

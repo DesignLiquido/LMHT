@@ -1,0 +1,5 @@
+<lmht>
+    <corpo>
+        <area-texto colunas="5" largura-maxima="200" nome="nome" dica-campo="Isso é um campo" linhas="5" />
+    </corpo>
+</lmht>
