@@ -1,0 +1,18 @@
+<lmht>
+    <corpo>
+        <tabela>
+            <cabeça-tabela>
+                <linha>
+                    <celula>Célula título 1</celula>
+                    <célula>Célula título 2</célula>
+                </linha>
+            </cabeça-tabela>
+            <corpo-tabela>
+                <linha>
+                    <celula>Célula corpo 1</celula>
+                    <célula>Célula corpo 2</célula>
+                </linha>
+            </corpo-tabela>
+        </tabela>
+    </corpo>
+</lmht>
