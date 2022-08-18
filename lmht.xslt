@@ -103,6 +103,11 @@
             <xsl:apply-templates select="@title|node()" />
         </abbr>
     </xsl:template>
+    <xsl:template match="lmht/corpo//aparte">
+        <aside>
+            <xsl:apply-templates select="@*|node()" />
+        </aside>
+    </xsl:template>
     <xsl:template match="lmht/corpo//area-texto|lmht/corpo//área-texto">
         <textarea>
             <xsl:for-each select="@*">

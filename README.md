@@ -57,6 +57,7 @@ LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML
 
 | LMHT                  | HTML       |
 | --------------------- | ---------- |
+| aparte                | aside      |
 | area-texto            | textarea   |
 | área-texto            | textarea   |
 | artigo                | article    |
