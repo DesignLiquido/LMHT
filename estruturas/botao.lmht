@@ -1,0 +1,6 @@
+<lmht>
+    <corpo>
+        <botao tipo="button">Oi, eu sou um botão</botao>
+        <botão>Oi, eu sou outro botão</botão>
+    </corpo>
+</lmht>

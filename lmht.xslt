@@ -184,13 +184,36 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//botao|lmht/corpo//botão">
         <button>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'tipo'">
+                        <xsl:attribute name="type">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </button>
     </xsl:template>
     <xsl:template match="lmht/corpo//citacao|lmht/corpo//citação">
         <blockquote>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'citar'">
+                        <xsl:attribute name="cite">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </blockquote>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//citar">
+        <cite>
+            <xsl:apply-templates select="@*|node()" />
+        </cite>
     </xsl:template>
     <xsl:template match="lmht/corpo//codigo|lmht/corpo//código">
         <code>
@@ -222,6 +245,20 @@
             <xsl:apply-templates select="@*|node()" />
         </span>
     </xsl:template>
+    <xsl:template match="lmht/corpo//etiqueta">
+        <label>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'para'">
+                        <xsl:attribute name="for">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </label>
+    </xsl:template>
     <xsl:template match="lmht/corpo//exemplo">
         <samp>
             <xsl:apply-templates select="@*|node()" />
@@ -243,11 +280,6 @@
         <input>
             <xsl:apply-templates select="@*|node()" />
         </input>
-    </xsl:template>
-    <xsl:template match="lmht/corpo//formulario/campos/etiqueta|lmht/corpo//formulário/campos/etiqueta|lmht/corpo//formulario/etiqueta|lmht/corpo//formulário/etiqueta">
-        <label>
-            <xsl:apply-templates select="@*|node()" />
-        </label>
     </xsl:template>
     <xsl:template match="lmht/corpo//formulario/titulo|lmht/corpo//formulário/título">
         <legend>
@@ -328,6 +360,16 @@
         <ol>
             <xsl:apply-templates select="@*|node()" />
         </ol>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//lista-pesquisavel|lmht/corpo//lista-pesquisável">
+        <datalist>
+            <xsl:apply-templates select="@*|node()" />
+        </datalist>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//lista-pesquisavel/opcao|lmht/corpo//lista-pesquisavel/opção|lmht/corpo//lista-pesquisável/opcao|lmht/corpo//lista-pesquisável/opção">
+        <option>
+            <xsl:apply-templates select="@*|node()" />
+        </option>
     </xsl:template>
     <xsl:template match="lmht/corpo//lista-simples">
         <ul>

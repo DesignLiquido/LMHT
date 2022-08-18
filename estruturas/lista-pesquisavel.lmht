@@ -1,0 +1,14 @@
+<lmht>
+    <corpo>
+        <etiqueta para="browser">Selecione seu navegador pela lista:</etiqueta>
+        <campo list="browsers" name="browser" id="browser" />
+        
+        <lista-pesquisavel id="browsers">
+            <opcao value="Edge" />
+            <opcao value="Firefox" />
+            <opcao value="Chrome" />
+            <opcao value="Opera" />
+            <opcao value="Safari" />
+        </lista-pesquisavel>
+    </corpo>
+</lmht>
