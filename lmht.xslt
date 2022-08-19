@@ -412,6 +412,11 @@
         </li>
     </xsl:template>
 
+    <xsl:template match="lmht/corpo//medidor">
+        <meter>
+            <xsl:apply-templates select="@*|node()" />
+        </meter>
+    </xsl:template>
     <xsl:template match="lmht/corpo//navegacao|lmht/corpo//navegação">
         <nav>
             <xsl:apply-templates select="@*|node()" />
