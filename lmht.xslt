@@ -289,7 +289,37 @@
 
     <xsl:template match="lmht/corpo//imagem">
         <img>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'altura'">
+                        <xsl:attribute name="height">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:choose>
+                    <xsl:when test="name() = 'largura'">
+                        <xsl:attribute name="width">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:choose>
+                    <xsl:when test="name() = 'legenda'">
+                        <xsl:attribute name="alt">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:choose>
+                    <xsl:when test="name() = 'origem'">
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </img>
     </xsl:template>
     <xsl:template match="lmht/corpo//invisivel|lmht/corpo//invisível">
