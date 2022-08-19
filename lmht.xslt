@@ -412,6 +412,11 @@
         </li>
     </xsl:template>
 
+    <xsl:template match="lmht/corpo//marca">
+        <mark>
+            <xsl:apply-templates select="@*|node()" />
+        </mark>
+    </xsl:template>
     <xsl:template match="lmht/corpo//medidor">
         <meter>
             <xsl:apply-templates select="@*|node()" />
