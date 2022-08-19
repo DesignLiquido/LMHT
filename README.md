@@ -41,7 +41,7 @@ Para testar a transformação XSL, use:
 - [http://xsltransform.net](http://xsltransform.net);
 - [https://www.freeformatter.com/xsl-transformer.html](https://www.freeformatter.com/xsl-transformer.html).
 
-Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 3.0.
+Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 2.0 ou superior.
 
 Há também um arquivo XSD para validação de arquivos na extensão `.lmht`. 
 
@@ -54,6 +54,8 @@ Para testar a validação, use:
 LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
 
 ## Mapeamentos entre estruturas LMHT e _tags_ HTML
+
+Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://github.com/DesignLiquido/LMHT/wiki).
 
 | LMHT                  | HTML       |
 | --------------------- | ---------- |
@@ -143,7 +145,7 @@ $xslt.load("lmht.xslt");
 $xslt.Transform("exemplo.lmht", "exemplo.html");
 ```
 
-### Groovy
+### Groovy e outras linguagens na JVM
 
 Usando [`groovysh`](https://groovy-lang.org/groovysh.html): 
 
@@ -175,7 +177,7 @@ Para bash, zsh, etc., não é necessário usar as aspas duplas.
 xslt3 -s:exemplo.lmht -xsl:lmht.xslt -o:exemplo.html -t
 ```
 
-# Python
+### Python
 
 Primeiro instale o pacote [lxml](https://pypi.org/project/lxml/). 
 
@@ -189,7 +191,7 @@ conteudo_html = transform(arquivo_lmht)
 conteudo_html.write("exemplo.html", encoding="utf-8")
 ```
 
-# Ruby
+### Ruby
 
 Primeiro instale o pacote [ruby-xslt](https://github.com/glejeune/ruby-xslt). Essa biblioteca reclama da versão 2.0 do XSL, mas faz a transformação assim mesmo.
 
