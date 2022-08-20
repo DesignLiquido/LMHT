@@ -1,0 +1,8 @@
+<lmht>
+    <corpo>
+        <script>
+            document.write("Olá mundo!")
+        </script>
+        <sem-script>Seu navegador não suporta JavaScript!</sem-script>
+    </corpo>
+</lmht>

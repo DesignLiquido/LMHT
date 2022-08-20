@@ -1,0 +1,6 @@
+<lmht>
+    <corpo>
+        <etiqueta para="file">Downloading progress:</etiqueta>
+        <progresso id="file" valor="32" maximo="100"> 32% </progresso>
+    </corpo>
+</lmht>

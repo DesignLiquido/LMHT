@@ -182,6 +182,11 @@
             <xsl:apply-templates select="@*|node()" />
         </article>
     </xsl:template>
+    <xsl:template match="lmht/corpo//aspas">
+        <q>
+            <xsl:apply-templates select="@*|node()" />
+        </q>
+    </xsl:template>
     <xsl:template match="lmht/corpo//botao|lmht/corpo//botão">
         <button>
             <xsl:for-each select="@*">
@@ -419,7 +424,31 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//medidor">
         <meter>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'maximo' or name() = 'máximo'">
+                        <xsl:attribute name="max">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'minimo'">
+                        <xsl:attribute name="min">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'valor'">
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </meter>
     </xsl:template>
     <xsl:template match="lmht/corpo//navegacao|lmht/corpo//navegação">
@@ -452,16 +481,52 @@
             <xsl:apply-templates select="@*|node()" />
         </main>
     </xsl:template>
+    <xsl:template match="lmht/corpo//progresso">
+        <progress>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'maximo' or name() = 'máximo'">
+                        <xsl:attribute name="max">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'minimo'">
+                        <xsl:attribute name="min">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'valor'">
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </progress>
+    </xsl:template>
     <xsl:template match="lmht/corpo//quebra-linha">
         <br />
     </xsl:template>
     <xsl:template match="lmht/corpo//quebra-linha-oportuna">
-        <wbr />
+        <wbr>
+            <xsl:apply-templates select="@*|node()" />
+        </wbr>
     </xsl:template>
     <xsl:template match="lmht/corpo//riscado">
         <s>
             <xsl:apply-templates select="@*|node()" />
         </s>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//script">
+        <script>
+            <xsl:apply-templates select="@*|node()" />
+        </script>
     </xsl:template>
     <xsl:template match="lmht/corpo//secao|lmht/corpo//seção">
         <section>

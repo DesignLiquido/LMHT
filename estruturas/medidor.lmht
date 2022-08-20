@@ -1,0 +1,10 @@
+<lmht>
+    <corpo>
+        <etiqueta para="disk_c">Uso do disco C:</etiqueta>
+        <medidor id="disk_c" valor="2" minimo="0" maximo="10">2 de 10</medidor>
+        <quebra-linha />
+
+        <etiqueta para="disk_d">Uso do disco D:</etiqueta>
+        <medidor id="disk_d" valor="0.6">60%</medidor>
+    </corpo>
+</lmht>

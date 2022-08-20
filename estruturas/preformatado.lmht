@@ -1,0 +1,13 @@
+<lmht>
+    <corpo>
+        <preformatado>
+            Texto em uma estrutura pré-formatada
+             é exibido em uma largura fixa
+             fonte, e preserva
+             tanto      espaços como
+             quebras 
+             de 
+             linha
+        </preformatado>
+    </corpo>
+</lmht>
