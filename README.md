@@ -38,7 +38,6 @@ Gera o equivalente em HTML:
 
 Para testar a transformação XSL, use: 
 
-- [http://xsltransform.net](http://xsltransform.net);
 - [https://www.freeformatter.com/xsl-transformer.html](https://www.freeformatter.com/xsl-transformer.html).
 
 Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 2.0 ou superior.

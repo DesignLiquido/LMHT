@@ -201,6 +201,20 @@
             <xsl:apply-templates select="node()" />
         </button>
     </xsl:template>
+    <xsl:template match="lmht/corpo//canvas">
+        <canvas>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </canvas>
+    </xsl:template>
     <xsl:template match="lmht/corpo//citacao|lmht/corpo//citação">
         <blockquote>
             <xsl:for-each select="@*">
@@ -224,6 +238,11 @@
         <code>
             <xsl:apply-templates select="@*|node()" />
         </code>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//definicao|lmht/corpo//definição">
+        <dfn>
+            <xsl:apply-templates select="@*|node()" />
+        </dfn>
     </xsl:template>
     <xsl:template match="lmht/corpo//detalhes">
         <details>

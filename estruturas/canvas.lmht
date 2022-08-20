@@ -1,0 +1,14 @@
+<lmht>
+    <corpo>
+        <canvas id="meuCanvas">
+            Seu navegador não suporta a estrutura canvas.
+        </canvas>
+            
+        <script>
+            var canvas = document.getElementById("meuCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = "#FF0000";
+            ctx.fillRect(0, 0, 80, 80);
+        </script>
+    </corpo>
+</lmht>
