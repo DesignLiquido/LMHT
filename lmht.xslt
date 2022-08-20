@@ -607,7 +607,12 @@
             <xsl:apply-templates select="@*|node()" />
         </td>
     </xsl:template>
-    <xsl:template match="lmht/corpo//tabela/titulo">
+    <xsl:template match="lmht/corpo//tabela/rodape|lmht/corpo//tabela/rodapé">
+        <tfoot>
+            <xsl:apply-templates select="@*|node()" />
+        </tfoot>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/titulo|lmht/corpo//tabela/título">
         <caption>
             <xsl:apply-templates select="@*|node()" />
         </caption>
