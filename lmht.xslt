@@ -134,7 +134,31 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//area|lmht/corpo//área">
         <area>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'coordenadas'">
+                        <xsl:attribute name="coords">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'forma'">
+                        <xsl:attribute name="shape">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'legenda'">
+                        <xsl:attribute name="alt">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'origem'">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </area>
     </xsl:template>
     <xsl:template match="lmht/corpo//area-texto|lmht/corpo//área-texto">
@@ -337,6 +361,16 @@
             <xsl:apply-templates select="@*|node()" />
         </samp>
     </xsl:template>
+    <xsl:template match="lmht/corpo//figura">
+        <figure>
+            <xsl:apply-templates select="@*|node()" />
+        </figure>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//figura/descricao|lmht/corpo//figura/descriçao|lmht/corpo//figura/descrição">
+        <figcaption>
+            <xsl:apply-templates select="@*|node()" />
+        </figcaption>
+    </xsl:template>
 
     <!-- Formulários -->
     <xsl:template match="lmht/corpo//formulario|lmht/corpo//formulário">
@@ -371,6 +405,13 @@
                     </xsl:when>
                 </xsl:choose>
                 <xsl:choose>
+                    <xsl:when test="name() = 'estilo'">
+                        <xsl:attribute name="style">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:choose>
                     <xsl:when test="name() = 'largura'">
                         <xsl:attribute name="width">
                             <xsl:value-of select="." />
@@ -387,6 +428,13 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'origem'">
                         <xsl:attribute name="src">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+                <xsl:choose>
+                    <xsl:when test="name() = 'mapa'">
+                        <xsl:attribute name="usemap">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -507,7 +555,16 @@
 
     <xsl:template match="lmht/corpo//mapa">
         <map>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </map>
     </xsl:template>
     <xsl:template match="lmht/corpo//marca">
