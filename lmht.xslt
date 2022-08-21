@@ -77,6 +77,25 @@
             <xsl:apply-templates select="@*|node()" />
         </head>
     </xsl:template>
+    <xsl:template match="lmht/cabeca/meta|lmht/cabeça/meta">
+        <meta>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'conteudo' or name() = 'conteúdo'">
+                        <xsl:attribute name="content">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </meta>
+    </xsl:template>
     <xsl:template match="lmht/cabeca/recurso|lmht/cabeça/recurso">
         <link>
             <xsl:apply-templates select="@*|node()" />
