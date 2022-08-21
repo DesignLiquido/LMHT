@@ -77,6 +77,11 @@
             <xsl:apply-templates select="@*|node()" />
         </head>
     </xsl:template>
+    <xsl:template match="lmht/cabeca/recurso|lmht/cabeça/recurso">
+        <link>
+            <xsl:apply-templates select="@*|node()" />
+        </link>
+    </xsl:template>
     <xsl:template match="lmht/cabeca/titulo|lmht/cabeca/título|lmht/cabeça/titulo|lmht/cabeça/título">
         <title>
             <xsl:apply-templates select="@*|node()" />
@@ -107,6 +112,11 @@
         <aside>
             <xsl:apply-templates select="@*|node()" />
         </aside>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//area|lmht/corpo//área">
+        <area>
+            <xsl:apply-templates select="@*|node()" />
+        </area>
     </xsl:template>
     <xsl:template match="lmht/corpo//area-texto|lmht/corpo//área-texto">
         <textarea>
@@ -187,6 +197,16 @@
             <xsl:apply-templates select="@*|node()" />
         </q>
     </xsl:template>
+    <xsl:template match="lmht/corpo//audio|lmht/corpo//áudio">
+        <audio>
+            <xsl:apply-templates select="@*|node()" />
+        </audio>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//base-ligacoes|lmht/corpo//base-ligaçoes|lmht/corpo//base-ligações">
+        <base>
+            <xsl:apply-templates select="@*|node()" />
+        </base>
+    </xsl:template>
     <xsl:template match="lmht/corpo//botao|lmht/corpo//botão">
         <button>
             <xsl:for-each select="@*">
@@ -239,6 +259,11 @@
             <xsl:apply-templates select="@*|node()" />
         </code>
     </xsl:template>
+    <xsl:template match="lmht/corpo//dados">
+        <data>
+            <xsl:apply-templates select="@*|node()" />
+        </data>
+    </xsl:template>
     <xsl:template match="lmht/corpo//definicao|lmht/corpo//definição">
         <dfn>
             <xsl:apply-templates select="@*|node()" />
@@ -282,6 +307,11 @@
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
         </label>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//excluido|lmht/corpo//excluído">
+        <del>
+            <xsl:apply-templates select="@*|node()" />
+        </del>
     </xsl:template>
     <xsl:template match="lmht/corpo//exemplo">
         <samp>
@@ -345,6 +375,11 @@
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
         </img>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//inserido">
+        <ins>
+            <xsl:apply-templates select="@*|node()" />
+        </ins>
     </xsl:template>
     <xsl:template match="lmht/corpo//invisivel|lmht/corpo//invisível">
         <template>
@@ -410,6 +445,21 @@
     </xsl:template>
 
     <!-- Listas -->
+    <xsl:template match="lmht/corpo//lista-definicoes|lmht/corpo//lista-definiçoes|lmht/corpo//lista-definições">
+        <dl>
+            <xsl:apply-templates select="@*|node()" />
+        </dl>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//lista-definicoes/termo|lmht/corpo//lista-definiçoes/termo|lmht/corpo//lista-definições/termo">
+        <dt>
+            <xsl:apply-templates select="@*|node()" />
+        </dt>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//lista-definicoes/definicao|lmht/corpo//lista-definiçoes/definicao|lmht/corpo//lista-definições/definicao|lmht/corpo//lista-definicoes/definiçao|lmht/corpo//lista-definiçoes/definiçao|lmht/corpo//lista-definições/definiçao|lmht/corpo//lista-definicoes/definição|lmht/corpo//lista-definiçoes/definição|lmht/corpo//lista-definições/definição">
+        <dd>
+            <xsl:apply-templates select="@*|node()" />
+        </dd>
+    </xsl:template>
     <xsl:template match="lmht/corpo//lista-numerada">
         <ol>
             <xsl:apply-templates select="@*|node()" />
@@ -420,7 +470,7 @@
             <xsl:apply-templates select="@*|node()" />
         </datalist>
     </xsl:template>
-    <xsl:template match="lmht/corpo//lista-pesquisavel/opcao|lmht/corpo//lista-pesquisavel/opção|lmht/corpo//lista-pesquisável/opcao|lmht/corpo//lista-pesquisável/opção">
+    <xsl:template match="lmht/corpo//lista-pesquisavel/opcao|lmht/corpo//lista-pesquisavel/opçao|lmht/corpo//lista-pesquisavel/opção|lmht/corpo//lista-pesquisável/opcao|lmht/corpo//lista-pesquisável/opçao|lmht/corpo//lista-pesquisável/opção">
         <option>
             <xsl:apply-templates select="@*|node()" />
         </option>
@@ -436,6 +486,11 @@
         </li>
     </xsl:template>
 
+    <xsl:template match="lmht/corpo//mapa">
+        <map>
+            <xsl:apply-templates select="@*|node()" />
+        </map>
+    </xsl:template>
     <xsl:template match="lmht/corpo//marca">
         <mark>
             <xsl:apply-templates select="@*|node()" />
@@ -553,12 +608,22 @@
         </section>
     </xsl:template>
 
-    <xsl:template match="lmht/corpo//selecao|lmht/corpo//seleção">
+    <xsl:template match="lmht/corpo//selecao|lmht/corpo//seleçao|lmht/corpo//seleção">
         <select>
             <xsl:apply-templates select="@*|node()" />
         </select>
     </xsl:template>
-    <xsl:template match="lmht/corpo//selecao/opcao|lmht/corpo//selecao/opção|lmht/corpo//seleção/opcao|lmht/corpo//seleção/opção">
+    <xsl:template match="lmht/corpo//selecao/grupo-opcoes|lmht/corpo//selecao/grupo-opçoes|lmht/corpo//selecao/grupo-opções|lmht/corpo//seleçao/grupo-opcoes|lmht/corpo//seleçao/grupo-opçoes|lmht/corpo//seleçao/grupo-opções|lmht/corpo//seleção/grupo-opcoes|lmht/corpo//seleção/grupo-opçoes|lmht/corpo//seleção/grupo-opções">
+        <optgroup>
+            <xsl:apply-templates select="@*|node()" />
+        </optgroup>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//grupo-opcoes/opcao|lmht/corpo//grupo-opcoes/opção|lmht/corpo//grupo-opções/opcao|lmht/corpo//grupo-opções/opção">
+        <option>
+            <xsl:apply-templates select="@*|node()" />
+        </option>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//selecao/opcao|lmht/corpo//selecao/opçao|lmht/corpo//selecao/opção|lmht/corpo//seleção/opcao|lmht/corpo//seleção/opçao|lmht/corpo//seleção/opção">
         <option>
             <xsl:apply-templates select="@*|node()" />
         </option>
@@ -590,6 +655,16 @@
         <table>
             <xsl:apply-templates select="@*|node()" />
         </table>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/grupo-colunas">
+        <colgroup>
+            <xsl:apply-templates select="@*|node()" />
+        </colgroup>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//tabela/grupo-colunas/coluna">
+        <col>
+            <xsl:apply-templates select="@*|node()" />
+        </col>
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/cabeca-tabela|lmht/corpo//tabela/cabeça-tabela">
         <thead>
@@ -654,32 +729,32 @@
     </xsl:template>
 
     <!-- Títulos -->
-    <xsl:template match="lmht/corpo//titulo1">
+    <xsl:template match="lmht/corpo//titulo1|lmht/corpo//título1">
         <h1>
             <xsl:apply-templates select="@*|node()" />
         </h1>
     </xsl:template>
-    <xsl:template match="lmht/corpo//titulo2">
+    <xsl:template match="lmht/corpo//titulo2|lmht/corpo//título2">
         <h2>
             <xsl:apply-templates select="@*|node()" />
         </h2>
     </xsl:template>
-    <xsl:template match="lmht/corpo//titulo3">
+    <xsl:template match="lmht/corpo//titulo3|lmht/corpo//título3">
         <h3>
             <xsl:apply-templates select="@*|node()" />
         </h3>
     </xsl:template>
-    <xsl:template match="lmht/corpo//titulo4">
+    <xsl:template match="lmht/corpo//titulo4|lmht/corpo//título4">
         <h4>
             <xsl:apply-templates select="@*|node()" />
         </h4>
     </xsl:template>
-    <xsl:template match="lmht/corpo//titulo5">
+    <xsl:template match="lmht/corpo//titulo5|lmht/corpo//título5">
         <h5>
             <xsl:apply-templates select="@*|node()" />
         </h5>
     </xsl:template>
-    <xsl:template match="lmht/corpo//titulo6">
+    <xsl:template match="lmht/corpo//titulo6|lmht/corpo//título6">
         <h6>
             <xsl:apply-templates select="@*|node()" />
         </h6>
