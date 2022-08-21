@@ -77,6 +77,11 @@
             <xsl:apply-templates select="@*|node()" />
         </head>
     </xsl:template>
+    <xsl:template match="lmht/cabeca//estilo|lmht/cabeça//estilo">
+        <style>
+            <xsl:apply-templates select="@*|node()" />
+        </style>
+    </xsl:template>
     <xsl:template match="lmht/cabeca/meta|lmht/cabeça/meta">
         <meta>
             <xsl:for-each select="@*">
@@ -839,5 +844,10 @@
         <var>
             <xsl:apply-templates select="@*|node()" />
         </var>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//video|lmht/corpo//vídeo">
+        <video>
+            <xsl:apply-templates select="@*|node()" />
+        </video>
     </xsl:template>
 </xsl:transform>
