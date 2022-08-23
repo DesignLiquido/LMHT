@@ -56,23 +56,23 @@ LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML
 
 Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://github.com/DesignLiquido/LMHT/wiki).
 
-| LMHT                       | HTML       |
-| -------------------------- | ---------- |
+| LMHT                                                                                                          | HTML       |
+| ------------------------------------------------------------------------------------------------------------- | ---------- |
 | [abreviacao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22abrevia%C3%A7%C3%A3o%22)                 | abbr       |
 | [abreviação](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22abrevia%C3%A7%C3%A3o%22)                 | abbr       |
-| aparte                     | aside      |
-| area                       | area       |
-| área                       | area       |
-| area-texto                 | textarea   |
-| área-texto                 | textarea   |
-| artigo                     | article    |
-| aspas                      | q          |
+| [aparte](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22aparte%22)                                   | aside      |
+| [area](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22%C3%A1rea%22)                                  | area       |
+| [área](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22%C3%A1rea%22)                                  | area       |
+| [area-texto](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22%C3%A1rea-texto%22)                      | textarea   |
+| [área-texto](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22%C3%A1rea-texto%22)                      | textarea   |
+| [artigo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22artigo%22)                                   | article    |
+| [aspas](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22aspas%22)                                     | q          |
 | audio                      | audio      |
 | áudio                      | audio      |
 | botao                      | button     |
 | botão                      | button     |
-| [cabeca](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                     | head       |
-| [cabeça](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                     | head       |
+| [cabeca](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                              | head       |
+| [cabeça](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                              | head       |
 | cabeca-tabela              | head       |
 | cabeça-tabela              | head       |
 | campo                      | input      |
