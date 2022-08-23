@@ -19,12 +19,12 @@
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@conteudo-editavel">
+    <xsl:template match="@conteudo-editavel|@conteúdo-editavel|@conteudo-editável|@conteúdo-editável">
         <xsl:attribute name="contenteditable">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@direcao-texto|@direção-texto">
+    <xsl:template match="@direcao-texto|@direçao-texto|@direcão-texto|@direção-texto">
         <xsl:attribute name="dir">
             <xsl:value-of select="." />
         </xsl:attribute>
@@ -34,33 +34,33 @@
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@idioma">
-        <xsl:attribute name="lang">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
-    <xsl:template match="@verificar-grafia">
-        <xsl:attribute name="spellcheck">
-            <xsl:value-of select="." />
-        </xsl:attribute>
-    </xsl:template>
     <xsl:template match="@estilo">
         <xsl:attribute name="style">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@indice-tab">
+    <xsl:template match="@idioma">
+        <xsl:attribute name="lang">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>    
+    <xsl:template match="@indice-tab|@índice-tab">
         <xsl:attribute name="tabindex">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@titulo">
+    <xsl:template match="@titulo|@título">
         <xsl:attribute name="title">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
     <xsl:template match="@traduzir">
         <xsl:attribute name="translate">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@verificar-grafia">
+        <xsl:attribute name="spellcheck">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
