@@ -9,13 +9,13 @@
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@classe">
-        <xsl:attribute name="class">
+    <xsl:template match="@atalho">
+        <xsl:attribute name="accesskey">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@chave-acesso">
-        <xsl:attribute name="accesskey">
+    <xsl:template match="@classe">
+        <xsl:attribute name="class">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
