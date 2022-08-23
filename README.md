@@ -58,8 +58,8 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 
 | LMHT                       | HTML       |
 | -------------------------- | ---------- |
-| abreviacao                 | abbr       |
-| abreviação                 | abbr       |
+| [abreviacao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22abrevia%C3%A7%C3%A3o%22)                 | abbr       |
+| [abreviação](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22abrevia%C3%A7%C3%A3o%22)                 | abbr       |
 | aparte                     | aside      |
 | area                       | area       |
 | área                       | area       |
@@ -71,8 +71,8 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | áudio                      | audio      |
 | botao                      | button     |
 | botão                      | button     |
-| cabeca                     | head       |
-| cabeça                     | head       |
+| [cabeca](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                     | head       |
+| [cabeça](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                     | head       |
 | cabeca-tabela              | head       |
 | cabeça-tabela              | head       |
 | campo                      | input      |
@@ -151,7 +151,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | principal                  | main       |
 | progresso                  | progress   |
 | quebra-linha               | br         |
-| quebra-linha-oportuna      | br         |
+| quebra-linha-oportuna      | wbr        |
 | recurso                    | link       |
 | riscado                    | s          |
 | script                     | script     |
