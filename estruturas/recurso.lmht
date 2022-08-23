@@ -1,0 +1,6 @@
+<lmht>
+    <cabeça>
+        <recurso tipo="stylesheet" destino="styles.css" />
+        <recurso tipo="license" destino="LICENSE" />
+    </cabeça>
+</lmht>

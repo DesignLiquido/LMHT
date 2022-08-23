@@ -1,0 +1,9 @@
+<lmht>
+    <cabeça>
+        <estilo>
+            html {
+                font-size: 14px;
+            }
+        </estilo>
+    </cabeça>
+</lmht>

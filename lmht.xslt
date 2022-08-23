@@ -103,7 +103,21 @@
     </xsl:template>
     <xsl:template match="lmht/cabeca/recurso|lmht/cabeça/recurso">
         <link>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'destino'">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'tipo'">
+                        <xsl:attribute name="rel">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </link>
     </xsl:template>
     <xsl:template match="lmht/cabeca/titulo|lmht/cabeca/título|lmht/cabeça/titulo|lmht/cabeça/título">
