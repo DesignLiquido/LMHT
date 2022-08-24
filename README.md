@@ -82,7 +82,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | canvas                     | canvas     |
 | celula                     | td         |
 | célula                     | td         |
-| citacao                    | blockquote |
+| [citacao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cita%C3%A7%C3%A3o%22)                   | blockquote |
 | citação                    | blockquote |
 | citar                      | cite       |
 | codigo                     | code       |
