@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
     <xsl:output method="html" version="5.0" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
-    <xsl:variable name="atributosGlobais">|class|dir|</xsl:variable>
 
     <!-- Atributos independentes de tags (globais) -->
     <xsl:template match="@arrastavel|@arrastável">
@@ -273,8 +272,63 @@
         <button>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'autofoco'">
+                        <xsl:attribute name="autofocus">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'desabilitado'">
+                        <xsl:attribute name="disabled">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'formulario' or name() = 'formulário'">
+                        <xsl:attribute name="form">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'desabilitado'">
+                        <xsl:attribute name="disabled">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'acao-formulario' or name() = 'ação-formulário'">
+                        <xsl:attribute name="formaction">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'alvo-formulario' or name() = 'alvo-formulário'">
+                        <xsl:attribute name="formtarget">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'codificacao-formulario' or name() = 'codificação-formulário'">
+                        <xsl:attribute name="formenctype">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'metodo-formulario' or name() = 'método-formulário'">
+                        <xsl:attribute name="formmethod">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nao-validar-formulario' or name() = 'não-validar-formulário'">
+                        <xsl:attribute name="formnovalidate">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'tipo'">
                         <xsl:attribute name="type">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'valor'">
+                        <xsl:attribute name="value">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>

@@ -52,6 +52,8 @@ Para testar a validação, use:
 
 LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
 
+Valores de atributos ainda não são traduzidos. Problema será contemplado em uma segunda fase do projeto. 
+
 ## Mapeamentos entre estruturas LMHT e _tags_ HTML
 
 Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://github.com/DesignLiquido/LMHT/wiki).
@@ -69,13 +71,13 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [aspas](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22aspas%22)                                     | q          |
 | audio                      | audio      |
 | áudio                      | audio      |
-| botao                      | button     |
-| botão                      | button     |
+| [botao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22bot%C3%A3o%22)                                | button     |
+| [botão](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22bot%C3%A3o%22)                                | button     |
 | [cabeca](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                              | head       |
 | [cabeça](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                              | head       |
 | cabeca-tabela              | head       |
 | cabeça-tabela              | head       |
-| campo                      | input      |
+| [campo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22campo%22)                                     | input      |
 | campos                     | fieldset   |
 | canvas                     | canvas     |
 | celula                     | td         |
@@ -107,7 +109,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | grupo-opcoes               | optgroup   |
 | grupo-opçoes               | optgroup   |
 | grupo-opções               | optgroup   |
-| imagem                     | img        |
+| [imagem](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22imagem%22)                               | img        |
 | inserido                   | ins        |
 | invisivel                  | template   |
 | invisível                  | template   |
