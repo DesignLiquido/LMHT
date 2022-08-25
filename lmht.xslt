@@ -935,7 +935,26 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/corpo-tabela/linha/celula|lmht/corpo//tabela/corpo-tabela/linha/célula">
         <td>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'cabecalhos' or name() = 'cabeçalhos'">
+                        <xsl:attribute name="headers">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'numero-colunas' or name() = 'número-colunas'">
+                        <xsl:attribute name="colspan">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'numero-linhas' or name() = 'número-linhas'">
+                        <xsl:attribute name="rowspan">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </td>
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/rodape|lmht/corpo//tabela/rodapé">
