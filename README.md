@@ -80,10 +80,10 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [campo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22campo%22)                                     | input      |
 | campos                     | fieldset   |
 | canvas                     | canvas     |
-| celula                     | td         |
-| célula                     | td         |
-| [citacao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cita%C3%A7%C3%A3o%22)                   | blockquote |
-| citação                    | blockquote |
+| [celula](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22c%C3%A9lula%22)                              | td         |
+| [célula](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22c%C3%A9lula%22)                              | td         |
+| [citacao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cita%C3%A7%C3%A3o%22)                       | blockquote |
+| [citação](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cita%C3%A7%C3%A3o%22)                       | blockquote |
 | citar                      | cite       |
 | codigo                     | code       |
 | código                     | code       |
