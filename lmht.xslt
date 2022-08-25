@@ -269,7 +269,26 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//audio|lmht/corpo//áudio">
         <audio>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'controles'">
+                        <xsl:attribute name="controls">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'inicio-automatico' or name() = 'início-automático'">
+                        <xsl:attribute name="autoplay">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </audio>
     </xsl:template>
     <xsl:template match="lmht/corpo//base-ligacoes|lmht/corpo//base-ligaçoes|lmht/corpo//base-ligações">
@@ -828,6 +847,20 @@
         <wbr>
             <xsl:apply-templates select="@*|node()" />
         </wbr>
+    </xsl:template>
+    <xsl:template match="lmht/corpo//recurso">
+        <source>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'origem'">
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </source>
     </xsl:template>
     <xsl:template match="lmht/corpo//riscado">
         <s>
