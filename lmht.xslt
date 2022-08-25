@@ -638,7 +638,7 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'midia'">
+                    <xsl:when test="name() = 'midia' or name() = 'mídia'">
                         <xsl:attribute name="media">
                             <xsl:value-of select="." />
                         </xsl:attribute>
@@ -648,7 +648,7 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'politica-referencia'">
+                    <xsl:when test="name() = 'politica-referencia' or name() = 'política-referência'">
                         <xsl:attribute name="referrerpolicy">
                             <xsl:value-of select="." />
                         </xsl:attribute>
@@ -665,7 +665,7 @@
                     </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:apply-templates select="node()" />
         </a>
     </xsl:template>
     <xsl:template match="lmht/corpo//linha-horizontal">
