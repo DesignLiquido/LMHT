@@ -281,8 +281,23 @@
         <button>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'acao-formulario' or name() = 'ação-formulário'">
+                        <xsl:attribute name="formaction">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'alvo-formulario' or name() = 'alvo-formulário'">
+                        <xsl:attribute name="formtarget">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'autofoco'">
                         <xsl:attribute name="autofocus">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'codificacao-formulario' or name() = 'codificação-formulário'">
+                        <xsl:attribute name="formenctype">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -298,21 +313,6 @@
                     </xsl:when>
                     <xsl:when test="name() = 'desabilitado'">
                         <xsl:attribute name="disabled">
-                            <xsl:value-of select="." />
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="name() = 'acao-formulario' or name() = 'ação-formulário'">
-                        <xsl:attribute name="formaction">
-                            <xsl:value-of select="." />
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="name() = 'alvo-formulario' or name() = 'alvo-formulário'">
-                        <xsl:attribute name="formtarget">
-                            <xsl:value-of select="." />
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="name() = 'codificacao-formulario' or name() = 'codificação-formulário'">
-                        <xsl:attribute name="formenctype">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -477,7 +477,76 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//formulario/campos/campo|lmht/corpo//formulário/campos/campo|lmht/corpo//formulario/campo|lmht/corpo//formulário/campo">
         <input>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'aceita'">
+                        <xsl:attribute name="accept">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'altura'">
+                        <xsl:attribute name="hight">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autocompletar'">
+                        <xsl:attribute name="autocomplete">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autofoco'">
+                        <xsl:attribute name="autofocus">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'direcao-texto' or name() = 'direção-texto'">
+                        <xsl:attribute name="dirname">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'formulario' or name() = 'formulário'">
+                        <xsl:attribute name="form">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'largura'">
+                        <xsl:attribute name="width">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'obrigatorio' or name() = 'obrigatório'">
+                        <xsl:attribute name="required">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'selecionado'">
+                        <xsl:attribute name="checked">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'tamanho'">
+                        <xsl:attribute name="size">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'tipo'">
+                        <xsl:attribute name="type">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'value'">
+                        <xsl:attribute name="valor">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </input>
     </xsl:template>
     <xsl:template match="lmht/corpo//formulario/titulo|lmht/corpo//formulário/título">
