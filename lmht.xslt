@@ -255,7 +255,16 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//aspas">
         <q>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'citar'">
+                        <xsl:attribute name="cite">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </q>
     </xsl:template>
     <xsl:template match="lmht/corpo//audio|lmht/corpo//áudio">
@@ -343,6 +352,16 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'id'">
                         <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'altura'">
+                        <xsl:attribute name="height">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'largura'">
+                        <xsl:attribute name="width">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>

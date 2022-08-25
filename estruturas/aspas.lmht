@@ -1,5 +1,9 @@
 <lmht>
     <corpo>
         <p>LMHT é a abreviação para <aspas>Linguagem de Marcação Hiper Texto</aspas>.</p>
+        <paragrafo> 
+            De acordo com a Wikipédia, 
+            <aspas citar="https://pt.wikipedia.org/wiki/Miss%C3%A3o_tripulada_a_Marte">o congresso dos Estados Unidos apoiou uma missão tripulada para a Lua, seguida pela exploração de um asteroide em 2025 e Marte na década de 2030.</aspas>.
+        </paragrafo>
     </corpo>
 </lmht>
