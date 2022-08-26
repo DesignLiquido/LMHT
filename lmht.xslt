@@ -452,6 +452,11 @@
         <label>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'formulario' or name() = 'formulário'">
+                        <xsl:attribute name="form">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'para'">
                         <xsl:attribute name="for">
                             <xsl:value-of select="." />
@@ -625,7 +630,21 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//inserido">
         <ins>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'citar'">
+                        <xsl:attribute name="cite">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'data'">
+                        <xsl:attribute name="datetime">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </ins>
     </xsl:template>
     <xsl:template match="lmht/corpo//invisivel|lmht/corpo//invisível">
