@@ -429,7 +429,16 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//dados">
         <data>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'valor'">
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </data>
     </xsl:template>
     <xsl:template match="lmht/corpo//definicao|lmht/corpo//definição">
@@ -439,7 +448,16 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//detalhes">
         <details>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'open'">
+                        <xsl:attribute name="abertos">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </details>
     </xsl:template>
     <xsl:template match="lmht/corpo//detalhes/sumario|lmht/corpo//detalhes/sumário">
@@ -483,7 +501,21 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//excluido|lmht/corpo//excluído">
         <del>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'citar'">
+                        <xsl:attribute name="cite">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'data'">
+                        <xsl:attribute name="datetime">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </del>
     </xsl:template>
     <xsl:template match="lmht/corpo//exemplo">
@@ -814,6 +846,20 @@
             <xsl:apply-templates select="node()" />
         </meter>
     </xsl:template>
+    <xsl:template match="lmht/corpo//modal">
+        <dialog>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'aberta'">
+                        <xsl:attribute name="open">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="@*|node()" />
+        </dialog>
+    </xsl:template>
     <xsl:template match="lmht/corpo//navegacao|lmht/corpo//navegação">
         <nav>
             <xsl:apply-templates select="@*|node()" />
@@ -961,12 +1007,30 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/grupo-colunas">
         <colgroup>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'numero-colunas' or name() = 'número-colunas'">
+                        <xsl:attribute name="span">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </colgroup>
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/grupo-colunas/coluna">
         <col>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'numero-colunas' or name() = 'número-colunas'">
+                        <xsl:attribute name="span">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
         </col>
     </xsl:template>
     <xsl:template match="lmht/corpo//tabela/cabeca-tabela|lmht/corpo//tabela/cabeça-tabela">

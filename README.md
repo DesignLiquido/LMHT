@@ -139,6 +139,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | lmht                       | html       |
 | marca                      | mark       |
 | medidor                    | meter      |
+| modal                      | dialog     |
 | navegacao                  | nav        |
 | navegação                  | nav        |
 | negrito                    | strong     |
