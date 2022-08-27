@@ -988,6 +988,11 @@
             <xsl:apply-templates select="@*|node()" />
         </sup>
     </xsl:template>
+    <xsl:template match="lmht/corpo//subpagina|lmht/corpo//subpágina">
+        <iframe>
+            <xsl:apply-templates select="@*|node()" />
+        </iframe>
+    </xsl:template>
     <xsl:template match="lmht/corpo//sublinhado">
         <u>
             <xsl:apply-templates select="@*|node()" />

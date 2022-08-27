@@ -56,6 +56,10 @@ Valores de atributos ainda não são traduzidos. Problema será contemplado em u
 
 ## Mapeamentos entre estruturas LMHT e _tags_ HTML
 
+Algumas _tags_ HTML por ora não serão mapeadas:
+
+- `<embed>` é uma _tag_ com várias alternativas, como `<img>`, `<iframe>`, `<video>` e `<audio>`. Essas _tags_ são mapeadas, respectivamente, com as estruturas `<imagem>`, `<subpágina>`, `<vídeo>` e `<áudio>`.
+
 Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://github.com/DesignLiquido/LMHT/wiki).
 
 | LMHT                                                                                                          | HTML       |
