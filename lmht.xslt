@@ -537,6 +537,55 @@
     <!-- Formulários -->
     <xsl:template match="lmht/corpo//formulario|lmht/corpo//formulário">
         <form>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'acao' or name() = 'ação'">
+                        <xsl:attribute name="action">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'aceita-codificacao-texto' or name() = 'aceita-codificação-texto'">
+                        <xsl:attribute name="accept-charset">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'alvo'">
+                        <xsl:attribute name="target">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autocompletar'">
+                        <xsl:attribute name="autocomplete">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'codificacao' or name() = 'codificação'">
+                        <xsl:attribute name="enctype">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'metodo' or name() = 'método'">
+                        <xsl:attribute name="method">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nao-validar' or name() = 'não-validar'">
+                        <xsl:attribute name="novalidate">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'relacionamento'">
+                        <xsl:attribute name="rel">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
             <xsl:apply-templates select="@*|node()" />
         </form>
     </xsl:template>
