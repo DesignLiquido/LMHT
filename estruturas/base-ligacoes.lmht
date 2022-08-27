@@ -1,0 +1,13 @@
+<lmht>
+    <cabeça>
+        <base-ligações prefixo="https://github.com" alvo="_blank" />
+    </cabeça>
+    <corpo>
+        <titulo1>Projetos da Design Líquido</titulo1>
+        <lista-simples>
+            <item-lista><ligação destino="/DesignLiquido/delegua">Delégua</ligação></item-lista>
+            <item-lista><ligação destino="/DesignLiquido/LMHT">LMHT</ligação></item-lista>
+            <item-lista><ligação destino="/DesignLiquido/FolEs">FolEs</ligação></item-lista>
+        </lista-simples>
+    </corpo>
+</lmht>

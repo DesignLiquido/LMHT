@@ -76,6 +76,25 @@
             <xsl:apply-templates select="@*|node()" />
         </head>
     </xsl:template>
+    <xsl:template match="lmht/cabeca//base-ligacoes|lmht/cabeca//base-ligações|lmht/cabeça//base-ligacoes|lmht/cabeça//base-ligações">
+        <base>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'alvo'">
+                        <xsl:attribute name="target">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'prefixo'">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </base>
+    </xsl:template>
     <xsl:template match="lmht/cabeca//estilo|lmht/cabeça//estilo">
         <style>
             <xsl:apply-templates select="@*|node()" />
@@ -290,11 +309,6 @@
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
         </audio>
-    </xsl:template>
-    <xsl:template match="lmht/corpo//base-ligacoes|lmht/corpo//base-ligaçoes|lmht/corpo//base-ligações">
-        <base>
-            <xsl:apply-templates select="@*|node()" />
-        </base>
     </xsl:template>
     <xsl:template match="lmht/corpo//botao|lmht/corpo//botão">
         <button>
@@ -657,7 +671,7 @@
             <xsl:apply-templates select="@*|node()" />
         </em>
     </xsl:template>
-    <xsl:template match="lmht/corpo//ligacao|lmht/corpo/ligação">
+    <xsl:template match="lmht/corpo//ligacao|lmht/corpo//ligação">
         <a>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -748,7 +762,7 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//lista-simples/item-lista|lmht/corpo//lista-numerada/item-lista">
         <li>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:apply-templates select="node()" />
         </li>
     </xsl:template>
 
