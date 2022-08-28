@@ -1039,6 +1039,65 @@
     </xsl:template>
     <xsl:template match="lmht/corpo//subpagina|lmht/corpo//subpágina">
         <iframe>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'altura'">
+                        <xsl:attribute name="height">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'carregamento'">
+                        <xsl:attribute name="loading">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'codigo-fonte' or name() = 'código-fonte'">
+                        <xsl:attribute name="srcdoc">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'experimentacao' or name() = 'experimentação'">
+                        <xsl:attribute name="sandbox">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'largura'">
+                        <xsl:attribute name="width">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'origem'">
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'permitir'">
+                        <xsl:attribute name="allow">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'permitir-tela-cheia'">
+                        <xsl:attribute name="allowfullscreen">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'permitir-requisicao-pagamento' or name() = 'permitir-requisição-pagamento'">
+                        <xsl:attribute name="allowpaymentrequest">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'politica-referencia' or name() = 'política-referência'">
+                        <xsl:attribute name="referrerpolicy">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
             <xsl:apply-templates select="@*|node()" />
         </iframe>
     </xsl:template>
