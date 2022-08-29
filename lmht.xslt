@@ -3,6 +3,8 @@
     <xsl:output method="html" version="5.0" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
 
     <!-- Atributos independentes de tags (globais) -->
+    <!-- Por algum motivo, adicionar `id` aqui não funciona. -->
+    <!-- Atributo id, portanto, é usado em todas as estruturas de `<corpo>`. -->
     <xsl:template match="@arrastavel|@arrastável">
         <xsl:attribute name="draggable">
             <xsl:value-of select="." />
@@ -154,6 +156,11 @@
         <abbr>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'titulo'">
                         <xsl:attribute name="title">
                             <xsl:value-of select="." />
@@ -180,6 +187,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'forma'">
                         <xsl:attribute name="shape">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -224,6 +236,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'formulario' or name() = 'formulário'">
                         <xsl:attribute name="disabled">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -281,6 +298,11 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
@@ -292,6 +314,11 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'controles'">
                         <xsl:attribute name="controls">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -344,8 +371,8 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'desabilitado'">
-                        <xsl:attribute name="disabled">
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -383,13 +410,13 @@
         <canvas>
             <xsl:for-each select="@*">
                 <xsl:choose>
-                    <xsl:when test="name() = 'id'">
-                        <xsl:attribute name="id">
+                    <xsl:when test="name() = 'altura'">
+                        <xsl:attribute name="height">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'altura'">
-                        <xsl:attribute name="height">
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -412,6 +439,11 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
@@ -431,6 +463,11 @@
         <data>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'valor'">
                         <xsl:attribute name="value">
                             <xsl:value-of select="." />
@@ -450,6 +487,11 @@
         <details>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'open'">
                         <xsl:attribute name="abertos">
                             <xsl:value-of select="." />
@@ -489,6 +531,11 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'para'">
                         <xsl:attribute name="for">
                             <xsl:value-of select="." />
@@ -510,6 +557,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'data'">
                         <xsl:attribute name="datetime">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -561,6 +613,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'codificacao' or name() = 'codificação'">
                         <xsl:attribute name="enctype">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -628,6 +685,11 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'largura'">
                         <xsl:attribute name="width">
                             <xsl:value-of select="." />
@@ -683,36 +745,31 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                </xsl:choose>
-                <xsl:choose>
                     <xsl:when test="name() = 'estilo'">
                         <xsl:attribute name="style">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                </xsl:choose>
-                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'largura'">
                         <xsl:attribute name="width">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                </xsl:choose>
-                <xsl:choose>
                     <xsl:when test="name() = 'legenda'">
                         <xsl:attribute name="alt">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                </xsl:choose>
-                <xsl:choose>
                     <xsl:when test="name() = 'origem'">
                         <xsl:attribute name="src">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                </xsl:choose>
-                <xsl:choose>
                     <xsl:when test="name() = 'mapa'">
                         <xsl:attribute name="usemap">
                             <xsl:value-of select="." />
@@ -734,6 +791,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'data'">
                         <xsl:attribute name="datetime">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -763,6 +825,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'destino'">
                         <xsl:attribute name="href">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -851,6 +918,11 @@
         <map>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'nome'">
                         <xsl:attribute name="name">
                             <xsl:value-of select="." />
@@ -901,6 +973,11 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'aberta'">
                         <xsl:attribute name="open">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -980,6 +1057,11 @@
         <source>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'origem'">
                         <xsl:attribute name="src">
                             <xsl:value-of select="." />
@@ -1006,6 +1088,7 @@
         </section>
     </xsl:template>
 
+    <!-- Seleção -->
     <xsl:template match="lmht/corpo//selecao|lmht/corpo//seleçao|lmht/corpo//seleção">
         <select>
             <xsl:apply-templates select="@*|node()" />
@@ -1058,6 +1141,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'experimentacao' or name() = 'experimentação'">
                         <xsl:attribute name="sandbox">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -1122,6 +1210,11 @@
         <colgroup>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'numero-colunas' or name() = 'número-colunas'">
                         <xsl:attribute name="span">
                             <xsl:value-of select="." />
@@ -1136,6 +1229,11 @@
         <col>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'numero-colunas' or name() = 'número-colunas'">
                         <xsl:attribute name="span">
                             <xsl:value-of select="." />
@@ -1182,6 +1280,11 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'cabecalhos' or name() = 'cabeçalhos'">
                         <xsl:attribute name="headers">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
