@@ -332,6 +332,26 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
+                    <xsl:when test="name() = 'mudo'">
+                        <xsl:attribute name="muted">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'origem'">
+                        <xsl:attribute name="src">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'pre-carregar' or name() = 'pré-carregar'">
+                        <xsl:attribute name="preload">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'repetir'">
+                        <xsl:attribute name="loop">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
