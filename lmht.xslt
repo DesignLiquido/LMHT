@@ -78,7 +78,7 @@
             <xsl:apply-templates select="@*|node()" />
         </head>
     </xsl:template>
-    <xsl:template match="lmht/cabeca//base-ligacoes|lmht/cabeca//base-ligações|lmht/cabeça//base-ligacoes|lmht/cabeça//base-ligações">
+    <xsl:template match="lmht/cabeca/base-ligacoes|lmht/cabeca/base-ligações|lmht/cabeça/base-ligacoes|lmht/cabeça/base-ligações">
         <base>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -97,7 +97,7 @@
             <xsl:apply-templates select="node()" />
         </base>
     </xsl:template>
-    <xsl:template match="lmht/cabeca//estilo|lmht/cabeça//estilo">
+    <xsl:template match="lmht/cabeca/estilo|lmht/cabeça/estilo">
         <style>
             <xsl:apply-templates select="@*|node()" />
         </style>
