@@ -42,9 +42,17 @@ Para testar a transformação XSL, use:
 
 Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 2.0 ou superior.
 
-Há também um arquivo XSD para validação de arquivos na extensão `.lmht`. 
+## Validação de arquivos em LMHT
 
-Para testar a validação, use:
+Há também um arquivo XSD para validação de arquivos na extensão `.lmht`, que vive no diretório raiz deste repositório. Para validar seu arquivo LMHT usando XSD, basta adicionar à estrutura `<lmht>` a referência para o arquivo XSD da seguinte forma:
+
+```xml
+<lmht xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/DesignLiquido/LMHT/principal/lmht.xsd">
+    ...
+</lmht>
+```
+
+Para testar a validação online, use:
 
 - [https://www.liquid-technologies.com/online-xsd-validator](https://www.liquid-technologies.com/online-xsd-validator).
 

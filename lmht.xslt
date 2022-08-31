@@ -68,7 +68,7 @@
 
     <xsl:template match="lmht">
         <html>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:apply-templates select="node()" />
         </html>
     </xsl:template>
 

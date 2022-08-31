@@ -12,12 +12,30 @@
     </xs:element>
 
     <xs:element name="cabeca">
-
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element ref="titulo" minOccurs='0' maxOccurs='1'></xs:element>
+                    <xs:element ref="título" minOccurs='0' maxOccurs='1'></xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
     </xs:element>
     <xs:element name="cabeça">
-
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element ref="titulo" minOccurs='0' maxOccurs='1'></xs:element>
+                    <xs:element ref="título" minOccurs='0' maxOccurs='1'></xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
     </xs:element>
     <xs:element name="corpo">
 
     </xs:element>
+
+    <!-- Elementos da estrutura `cabeça` -->
+    <xs:element name="titulo" type='xs:string' />
+    <xs:element name="título" type='xs:string' />
 </xs:schema>

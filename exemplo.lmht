@@ -1,10 +1,13 @@
-<lmht>
+<lmht xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/DesignLiquido/LMHT/principal/lmht.xsd">
     <cabeça>
-
+        <título>Exemplo de página em LMHT</título>
     </cabeça>
     <corpo>
         <titulo1>Isso é um título</titulo1>
-        <p classe="minha-classe">Isto é um parágrafo. <negrito>Isso é um texto em negrito.</negrito></p>
+        <p classe="minha-classe">
+            Isto é um parágrafo.
+            <negrito>Isso é um texto em negrito.</negrito>
+        </p>
         <lista-simples>
             <item-lista classe="um-teste">Itens podem ser adicionados usando a etiqueta item-lista.</item-lista>
             <item-lista>Cada item da lista é transformado em um item li do HTML.</item-lista>
