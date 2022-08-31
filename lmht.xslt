@@ -180,8 +180,23 @@
         <area>
             <xsl:for-each select="@*">
                 <xsl:choose>
+                    <xsl:when test="name() = 'alvo'">
+                        <xsl:attribute name="target">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'baixar'">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
                     <xsl:when test="name() = 'coordenadas'">
                         <xsl:attribute name="coords">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'destino'">
+                        <xsl:attribute name="href">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -200,8 +215,13 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'origem'">
-                        <xsl:attribute name="href">
+                    <xsl:when test="name() = 'mídia' or name() = 'midia'">
+                        <xsl:attribute name="media">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'tipo'">
+                        <xsl:attribute name="type">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
@@ -785,13 +805,13 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'origem'">
-                        <xsl:attribute name="src">
+                    <xsl:when test="name() = 'mapa'">
+                        <xsl:attribute name="usemap">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'mapa'">
-                        <xsl:attribute name="usemap">
+                    <xsl:when test="name() = 'origem'">
+                        <xsl:attribute name="src">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>

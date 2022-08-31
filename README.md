@@ -73,8 +73,8 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [área-texto](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22%C3%A1rea-texto%22)                      | textarea   |
 | [artigo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22artigo%22)                                   | article    |
 | [aspas](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22aspas%22)                                     | q          |
-| audio                      | audio      |
-| áudio                      | audio      |
+| [audio](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22%C3%A1udio%22)                                | audio      |
+| [áudio](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22%C3%A1udio%22)                                | audio      |
 | [botao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22bot%C3%A3o%22)                                | button     |
 | [botão](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22bot%C3%A3o%22)                                | button     |
 | [cabeca](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22cabe%C3%A7a%22)                              | head       |
