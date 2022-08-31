@@ -48,6 +48,8 @@ Para testar a validação, use:
 
 - [https://www.liquid-technologies.com/online-xsd-validator](https://www.liquid-technologies.com/online-xsd-validator).
 
+Veja mais abaixo como validar usando diferentes linguagens de programação.
+
 ## Limitações
 
 LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
@@ -261,4 +263,43 @@ require 'xml/xslt'
 xslt.xml = "exemplo.lmht"
 xslt.xsl = "lmht.xslt"
 xslt.save('exemplo.html')
+```
+
+## Bibliotecas de validação por linguagem
+
+### .NET em geral (C#, VB.NET, IronPython, PowerShell)
+
+Abaixo temos um exemplo de como validar um arquivo usando PowerShell:
+
+```powershell
+$leitorSchema = New-Object System.Xml.XmlTextReader "lmht.xsd"
+[scriptblock] $funcaoParaLidarComExcecoes = { Write-Error $args[1].Exception }
+$schema = [System.Xml.Schema.XmlSchema]::Read($leitorSchema, $funcaoParaLidarComExcecoes)
+
+$xml = New-Object System.Xml.XmlDocument
+$xml.Schemas.Add($schema) | Out-Null
+$xml.Load("exemplo.lmht")
+$xml.Validate(
+{
+    throw ([PsCustomObject] @{
+        SchemaFile = "lmht.xsd"
+        XmlFile = "exemplo.lmht"
+        Exception = $args[1].Exception
+    })
+})
+$leitorSchema.Close()
+```
+
+### Python
+
+Primeiro instale o pacote [lxml](https://pypi.org/project/lxml/). 
+
+```python
+from lxml import etree
+
+xmlschema_doc = etree.parse("lmht.xsd")
+xmlschema = etree.XMLSchema(xmlschema_doc)
+
+xml_doc = etree.parse("exemplo.lmht")
+print(xmlschema.validate(xml_doc))
 ```

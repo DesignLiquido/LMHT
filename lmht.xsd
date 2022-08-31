@@ -3,11 +3,21 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:choice>
-                    <xs:element name="cabeca"></xs:element>
-                    <xs:element name="cabeça"></xs:element>
+                    <xs:element ref="cabeca" minOccurs='0' maxOccurs='1'></xs:element>
+                    <xs:element ref="cabeça" minOccurs='0' maxOccurs='1'></xs:element>
                 </xs:choice>
-                <xs:element name="corpo"></xs:element>
+                <xs:element ref="corpo" minOccurs='0' maxOccurs='1'></xs:element>
             </xs:sequence>
         </xs:complexType>
+    </xs:element>
+
+    <xs:element name="cabeca">
+
+    </xs:element>
+    <xs:element name="cabeça">
+
+    </xs:element>
+    <xs:element name="corpo">
+
     </xs:element>
 </xs:schema>
