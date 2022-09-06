@@ -2,6 +2,36 @@
 <xsl:transform xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
     <xsl:output method="html" version="5.0" omit-xml-declaration="yes" encoding="UTF-8" indent="yes" />
 
+    <!-- Seção de _templates_ utilitários -->
+    <!-- Os _templates_ abaixo normalmente trabalham com transcrição de valores de atributos LMHT para HTML -->
+    <xsl:template name="ProcessarAlvos">
+        <xsl:param name="Alvo" />
+        <xsl:choose>
+            <xsl:when test="$Alvo = '_mesmo'">_self</xsl:when>
+            <xsl:when test="$Alvo = '_novo'">_blank</xsl:when>
+            <xsl:when test="$Alvo = '_pai'">_parent</xsl:when>
+            <xsl:when test="$Alvo = '_topo'">_top</xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template name="ProcessarRelacionamentos">
+        <xsl:param name="Relacionamento" />
+        <xsl:choose>
+            <xsl:when test="$Relacionamento = 'ajuda'">help</xsl:when>
+            <xsl:when test="$Relacionamento = 'alternativa'">alternate</xsl:when>
+            <xsl:when test="$Relacionamento = 'anterior'">prev</xsl:when>
+            <xsl:when test="$Relacionamento = 'autor'">author</xsl:when>
+            <xsl:when test="$Relacionamento = 'externo'">external</xsl:when>
+            <xsl:when test="$Relacionamento = 'licença' or $Relacionamento = 'licenca'">license</xsl:when>
+            <xsl:when test="$Relacionamento = 'marcador'">bookmark</xsl:when>
+            <xsl:when test="$Relacionamento = 'não-seguir' or $Relacionamento = 'nao-seguir'">nofollow</xsl:when>
+            <xsl:when test="$Relacionamento = 'palavra-chave'">tag</xsl:when>
+            <xsl:when test="$Relacionamento = 'pesquisa'">search</xsl:when>
+            <xsl:when test="$Relacionamento = 'próximo' or $Relacionamento = 'proximo'">next</xsl:when>
+            <xsl:when test="$Relacionamento = 'sem-anterior'">noreferrer</xsl:when>
+            <xsl:when test="$Relacionamento = 'sem-janela-abertura'">noopener</xsl:when>
+        </xsl:choose>
+    </xsl:template>
+
     <!-- Atributos independentes de tags (globais) -->
     <!-- Por algum motivo, adicionar `id` aqui não funciona. -->
     <!-- Atributo id, portanto, é usado em todas as estruturas de `<corpo>`. -->
@@ -84,7 +114,9 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'alvo'">
                         <xsl:attribute name="target">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarAlvos">
+                                <xsl:with-param name="Alvo" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'prefixo'">
@@ -182,7 +214,9 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'alvo'">
                         <xsl:attribute name="target">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarAlvos">
+                                <xsl:with-param name="Alvo" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'baixar'">
@@ -643,7 +677,9 @@
                     </xsl:when>
                     <xsl:when test="name() = 'alvo'">
                         <xsl:attribute name="target">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarAlvos">
+                                <xsl:with-param name="Alvo" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'autocompletar'">
@@ -678,12 +714,14 @@
                     </xsl:when>
                     <xsl:when test="name() = 'relacionamento'">
                         <xsl:attribute name="rel">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarRelacionamentos">
+                                <xsl:with-param name="Relacionamento" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                 </xsl:choose>
             </xsl:for-each>
-            <xsl:apply-templates select="@*|node()" />
+            <xsl:apply-templates select="node()" />
         </form>
     </xsl:template>
     <xsl:template match="lmht/corpo//formulario/campos|lmht/corpo//formulário/campos">
@@ -860,7 +898,9 @@
                 <xsl:choose>
                     <xsl:when test="name() = 'alvo'">
                         <xsl:attribute name="target">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarAlvos">
+                                <xsl:with-param name="Alvo" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'destino'">
@@ -895,7 +935,9 @@
                     </xsl:when>
                     <xsl:when test="name() = 'relacionamento'">
                         <xsl:attribute name="rel">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarRelacionamentos">
+                                <xsl:with-param name="Relacionamento" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'tipo'">

@@ -62,7 +62,7 @@ Veja mais abaixo como validar usando diferentes linguagens de programação.
 
 LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML4, não possuem uma estrutura correspondente em LMHT. 
 
-Valores de atributos ainda não são traduzidos. Problema será contemplado em uma segunda fase do projeto. 
+Não todos os valores de atributos são traduzidos. Quando há essa tradução, isso normalmente é especificado na Wiki de cada estrutura.
 
 ## Mapeamentos entre estruturas LMHT e _tags_ HTML
 
