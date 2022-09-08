@@ -13,6 +13,35 @@
             <xsl:when test="$Alvo = '_topo'">_top</xsl:when>
         </xsl:choose>
     </xsl:template>
+    <xsl:template name="ProcessarForma">
+        <xsl:param name="Forma" />
+        <xsl:choose>
+            <xsl:when test="$Forma = 'padrão' or $Forma = 'padrao'">default</xsl:when>
+            <xsl:when test="$Forma = 'retangular'">rect</xsl:when>
+            <xsl:when test="$Forma = 'circular'">circle</xsl:when>
+            <xsl:when test="$Forma = 'polígono' or $Forma = 'poligono'">poly</xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template name="ProcessarPoliticasReferenciador">
+        <xsl:param name="Politica" />
+        <xsl:choose>
+            <xsl:when test="$Politica = 'destino-não-seguro' or $Politica = 'destino-nao-seguro'">unsafe-url</xsl:when>
+            <xsl:when test="$Politica = 'mesma-origem'">same-origin</xsl:when>
+            <xsl:when test="$Politica = 'origem'">origin</xsl:when>
+            <xsl:when test="$Politica = 'origem-quando-origem-cruzada'">origin-when-cross-origin</xsl:when>
+            <xsl:when test="$Politica = 'origem-quando-origem-cruzada-rigorosa'">strict-origin-when-cross-origin</xsl:when>
+            <xsl:when test="$Politica = 'sem-referenciador'">no-referrer</xsl:when>
+            <xsl:when test="$Politica = 'sem-referenciador-ao-rebaixar'">no-referrer-when-downgrade</xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template name="ProcessarPreCarga">
+        <xsl:param name="PreCarga" />
+        <xsl:choose>
+            <xsl:when test="$PreCarga = 'automática' or $Forma = 'automatica'">auto</xsl:when>
+            <xsl:when test="$PreCarga = 'metadados'">metadata</xsl:when>
+            <xsl:when test="$PreCarga = 'circular'">circle</xsl:when>
+        </xsl:choose>
+    </xsl:template>
     <xsl:template name="ProcessarRelacionamentos">
         <xsl:param name="Relacionamento" />
         <xsl:choose>
@@ -236,7 +265,9 @@
                     </xsl:when>
                     <xsl:when test="name() = 'forma'">
                         <xsl:attribute name="shape">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarFormas">
+                                <xsl:with-param name="Forma" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'id'">
@@ -930,7 +961,9 @@
                     </xsl:when>
                     <xsl:when test="name() = 'politica-referencia' or name() = 'política-referência'">
                         <xsl:attribute name="referrerpolicy">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarPoliticasReferenciador">
+                                <xsl:with-param name="Politica" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'relacionamento'">
@@ -1263,7 +1296,9 @@
                     </xsl:when>
                     <xsl:when test="name() = 'politica-referencia' or name() = 'política-referência'">
                         <xsl:attribute name="referrerpolicy">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarPoliticasReferenciador">
+                                <xsl:with-param name="Politica" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                 </xsl:choose>
