@@ -130,7 +130,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | italico                    | em         |
 | itálico                    | em         |
 | item-lista                 | li         |
-| ligacao                    | a          |
+| [ligacao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22liga%C3%A7%C3%A3o%22)                    | a          |
 | [ligação](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22liga%C3%A7%C3%A3o%22)                    | a          |
 | linha                      | tr         |
 | linha-horizontal           | hr         |
