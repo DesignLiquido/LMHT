@@ -265,7 +265,7 @@
                     </xsl:when>
                     <xsl:when test="name() = 'forma'">
                         <xsl:attribute name="shape">
-                            <xsl:call-template name="ProcessarFormas">
+                            <xsl:call-template name="ProcessarForma">
                                 <xsl:with-param name="Forma" select="." />
                             </xsl:call-template>
                         </xsl:attribute>

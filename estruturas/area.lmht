@@ -3,8 +3,8 @@
         <imagem origem="https://http.cat/418" legenda="Gato no bule" mapa="#mapadogato" altura="600" largura="750" />
 
         <mapa nome="mapadogato">
-            <area forma="circle" coordenadas="357,100,84" legenda="Gato" origem="https://http.cat" />
-            <area forma="rect" coordenadas="174,204,570,450" legenda="Bule" origem="https://pt.wikipedia.org/wiki/Bule" />            
+            <area forma="circular" coordenadas="357,100,84" legenda="Gato" origem="https://http.cat" />
+            <area forma="retangular" coordenadas="174,204,570,450" legenda="Bule" origem="https://pt.wikipedia.org/wiki/Bule" />
         </mapa>
     </corpo>
 </lmht>
