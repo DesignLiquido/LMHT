@@ -248,11 +248,6 @@
                             </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'baixar'">
-                        <xsl:attribute name="href">
-                            <xsl:value-of select="." />
-                        </xsl:attribute>
-                    </xsl:when>
                     <xsl:when test="name() = 'coordenadas'">
                         <xsl:attribute name="coords">
                             <xsl:value-of select="." />
@@ -282,6 +277,11 @@
                     </xsl:when>
                     <xsl:when test="name() = 'mídia' or name() = 'midia'">
                         <xsl:attribute name="media">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'origem'">
+                        <xsl:attribute name="href">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
