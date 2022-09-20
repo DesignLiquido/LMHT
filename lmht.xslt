@@ -37,7 +37,7 @@
     <xsl:template name="ProcessarPreCarga">
         <xsl:param name="PreCarga" />
         <xsl:choose>
-            <xsl:when test="$PreCarga = 'automática' or $Forma = 'automatica'">auto</xsl:when>
+            <xsl:when test="$PreCarga = 'automática' or $PreCarga = 'automatica'">auto</xsl:when>
             <xsl:when test="$PreCarga = 'metadados'">metadata</xsl:when>
             <xsl:when test="$PreCarga = 'circular'">circle</xsl:when>
         </xsl:choose>
