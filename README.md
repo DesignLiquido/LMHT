@@ -107,7 +107,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                  | dfn        |
 | [definiçao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                  | dfn        |
 | [definição](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                  | dfn        |
-| detalhes                   | details    |
+| [detalhes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22detalhes%22)                   | details    |
 | divisao                    | div        |
 | divisão                    | div        |
 | endereco                   | address    |
