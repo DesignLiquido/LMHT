@@ -110,12 +110,12 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [detalhes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22detalhes%22)                               | details    |
 | divisao                    | div        |
 | divisão                    | div        |
-| endereco                   | address    |
-| endereço                   | address    |
-| envelope-texto             | span       |
+| [endereco](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22endere%C3%A7o%22)                   | address    |
+| [endereço](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22endere%C3%A7o%22)                   | address    |
+| [envelope-texto](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22envelope-texto%22)             | span       |
 | [etiqueta](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22etiqueta%22)                               | label      |
-| excluido                   | del        |
-| excluído                   | del        |
+| [excluido](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22exclu%C3%ADdo%22)                   | del        |
+| [excluído](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22exclu%C3%ADdo%22)                   | del        |
 | exemplo                    | samp       |
 | [formulario](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22formul%C3%A1rio%22)                      | form       |
 | [formulário](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22formul%C3%A1rio%22)                      | form       |
