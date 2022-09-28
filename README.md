@@ -101,7 +101,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [citar](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22citar%22)                      | cite       |
 | [codigo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22c%C3%B3digo%22)                              | code       |
 | [código](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22c%C3%B3digo%22)                              | code       |
-| [coluna](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22coluna%22)                     | col        |
+| coluna                     | col        |
 | corpo                      | body       |
 | [corpo-tabela](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22corpo-tabela%22)               | tbody      |
 | [definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                   | dfn        |
@@ -119,7 +119,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [exemplo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22exemplo%22)                    | samp       |
 | [formulario](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22formul%C3%A1rio%22)                      | form       |
 | [formulário](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22formul%C3%A1rio%22)                      | form       |
-| grupo-colunas              | colgroup   |
+| [grupo-colunas](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22grupo-colunas%22)              | colgroup   |
 | [grupo-opcoes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22grupo-op%C3%A7%C3%B5es%22)             | optgroup   |
 | [grupo-opçoes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22grupo-op%C3%A7%C3%B5es%22)             | optgroup   |
 | [grupo-opções](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22grupo-op%C3%A7%C3%B5es%22)             | optgroup   |
