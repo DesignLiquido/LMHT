@@ -116,7 +116,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [etiqueta](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22etiqueta%22)                               | label      |
 | [excluido](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22exclu%C3%ADdo%22)                   | del        |
 | [excluído](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22exclu%C3%ADdo%22)                   | del        |
-| exemplo                    | samp       |
+| [exemplo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22exemplo%22)                    | samp       |
 | [formulario](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22formul%C3%A1rio%22)                      | form       |
 | [formulário](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22formul%C3%A1rio%22)                      | form       |
 | grupo-colunas              | colgroup   |
