@@ -125,8 +125,8 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [grupo-opções](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22grupo-op%C3%A7%C3%B5es%22)             | optgroup   |
 | [imagem](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22imagem%22)                                   | img        |
 | [inserido](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22inserido%22)                               | ins        |
-| invisivel                  | template   |
-| invisível                  | template   |
+| [invisivel](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22invisivel%22)                  | template   |
+| [invisível](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22invisivel%22)                  | template   |
 | italico                    | em         |
 | itálico                    | em         |
 | item-lista                 | li         |
