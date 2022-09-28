@@ -101,7 +101,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [citar](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22citar%22)                      | cite       |
 | [codigo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22c%C3%B3digo%22)                              | code       |
 | [código](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22c%C3%B3digo%22)                              | code       |
-| coluna                     | col        |
+| [coluna](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22coluna%22)                     | col        |
 | corpo                      | body       |
 | [corpo-tabela](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22corpo-tabela%22)               | tbody      |
 | [definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                   | dfn        |
