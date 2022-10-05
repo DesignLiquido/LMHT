@@ -132,7 +132,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [item-lista](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22item-lista%22)                           | li         |
 | [ligacao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22liga%C3%A7%C3%A3o%22)                       | a          |
 | [ligação](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22liga%C3%A7%C3%A3o%22)                       | a          |
-| linha                      | tr         |
+| [linha](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22linha%22)                      | tr         |
 | linha-horizontal           | hr         |
 | lista-definicoes           | dl         |
 | lista-definiçoes           | dl         |
