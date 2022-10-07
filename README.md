@@ -134,9 +134,9 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [ligação](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22liga%C3%A7%C3%A3o%22)                       | a          |
 | [linha](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22linha%22)                      | tr         |
 | linha-horizontal           | hr         |
-| lista-definicoes           | dl         |
-| lista-definiçoes           | dl         |
-| lista-definições           | dl         |
+| [lista-definicoes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es%22)           | dl         |
+| [lista-definiçoes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es%22)           | dl         |
+| [lista-definições](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es%22)           | dl         |
 | [lista-definicoes/definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
 | [lista-definicoes/definiçao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
 | [lista-definicoes/definição](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
