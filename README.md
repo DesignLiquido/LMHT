@@ -146,7 +146,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [lista-definições/definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
 | [lista-definições/definiçao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
 | [lista-definições/definição](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
-| lista-numerada             | ol         |
+| [lista-numerada](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-numerada%22)             | ol         |
 | [lista-pesquisavel](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-pesquis%C3%A1vel%22)       | datalist   |
 | [lista-pesquisável](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-pesquis%C3%A1vel%22)       | datalist   |
 | lista-simples              | ul         |
