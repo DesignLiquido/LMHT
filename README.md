@@ -40,7 +40,10 @@ Para testar a transformação XSL, use:
 
 - [https://www.freeformatter.com/xsl-transformer.html](https://www.freeformatter.com/xsl-transformer.html).
 
-Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 2.0 ou superior.
+Por ser independente de linguagem, todos os arquivos de especificações podem ser usados com qualquer biblioteca de qualquer linguagem que implemente XSLT 1.0 ou superior.
+
+- Para uso de XSLT 1.0, use o arquivo `lmht10.xslt`;
+- Para uso de XSLT 2.0 ou superior, use o arquivo `lmht.xslt`.
 
 ## Validação de arquivos em LMHT
 
