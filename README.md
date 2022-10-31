@@ -152,9 +152,9 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [lista-numerada](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-numerada%22)             | ol         |
 | [lista-pesquisavel](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-pesquis%C3%A1vel%22)       | datalist   |
 | [lista-pesquisável](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-pesquis%C3%A1vel%22)       | datalist   |
-| lista-simples              | ul         |
+| [lista-simples](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-simples%22)              | ul         |
 | lmht                       | html       |
-| marca                      | mark       |
+| [marca](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22marca%22)                      | mark       |
 | medidor                    | meter      |
 | modal                      | dialog     |
 | navegacao                  | nav        |
