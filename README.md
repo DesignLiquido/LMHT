@@ -156,7 +156,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | lmht                       | html       |
 | [marca](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22marca%22)                      | mark       |
 | [medidor](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22medidor%22)                    | meter      |
-| modal                      | dialog     |
+| [modal](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22modal%22)                      | dialog     |
 | navegacao                  | nav        |
 | navegação                  | nav        |
 | negrito                    | strong     |
