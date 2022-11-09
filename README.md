@@ -167,9 +167,9 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [p](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22paragrafo%22)                          | p          |
 | [paragrafo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22paragrafo%22)                  | p          |
 | [parágrafo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22paragrafo%22)                  | p          |
-| preformatado               | pre        |
-| principal                  | main       |
-| progresso                  | progress   |
+| [preformatado](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22preformatado%22)               | pre        |
+| [principal](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22principal%22)                  | main       |
+| [progresso](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22progresso%22)                  | progress   |
 | quebra-linha               | br         |
 | quebra-linha-oportuna      | wbr        |
 | recurso                    | link       |
