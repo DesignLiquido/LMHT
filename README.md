@@ -1,6 +1,8 @@
 # LMHT
 
-<img src="./recursos/imagens/lmht-laranja.svg" height="50%" />
+<p align="center">
+    <img src="./recursos/imagens/lmht-laranja.svg" style="max-width: 25%;" />
+</p>
 
 Especificação da Linguagem de Marcação Hiper Texto, LMHT.
 
