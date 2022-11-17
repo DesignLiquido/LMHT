@@ -1,7 +1,7 @@
 # LMHT
 
 <p align="center">
-    <img src="./recursos/imagens/lmht-laranja.svg" style="max-width: 25%;" />
+    ![]([./recursos/imagens/lmht-laranja.svg](https://github.com/DesignLiquido/LMHT/raw/principal/recursos/imagens/lmht-laranja.svg) | width=100)
 </p>
 
 Especificação da Linguagem de Marcação Hiper Texto, LMHT.
