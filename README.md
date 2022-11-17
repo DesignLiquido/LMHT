@@ -1,5 +1,7 @@
 # LMHT
 
+<img src="./recursos/imagens/lmht-laranja.svg" height="50%" />
+
 Especificação da Linguagem de Marcação Hiper Texto, LMHT.
 
 LMHT nada mais é do que HTML em português, usando um arquivo de transformação XSL para mudar nomes de _tags_ e atributos.
