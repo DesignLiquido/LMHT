@@ -178,7 +178,7 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [quebra-linha-oportuna](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22quebra-linha-oportuna%22)      | wbr        |
 | [recurso](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22recurso%22)                    | link       |
 | [riscado](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22riscado%22)                    | s          |
-| script                     | script     |
+| [script](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22script%22)                     | script     |
 | secao                      | section    |
 | seção                      | section    |
 | [selecao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22sele%C3%A7%C3%A3o%22)                     | select     |
