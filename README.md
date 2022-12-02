@@ -174,11 +174,11 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [preformatado](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22preformatado%22)               | pre        |
 | [principal](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22principal%22)                  | main       |
 | [progresso](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22progresso%22)                  | progress   |
-| quebra-linha               | br         |
-| quebra-linha-oportuna      | wbr        |
-| recurso                    | link       |
-| riscado                    | s          |
-| script                     | script     |
+| [quebra-linha](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22quebra-linha%22)               | br         |
+| [quebra-linha-oportuna](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22quebra-linha-oportuna%22)      | wbr        |
+| [recurso](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22recurso%22)                    | link       |
+| [riscado](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22riscado%22)                    | s          |
+| [script](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22script%22)                     | script     |
 | secao                      | section    |
 | seção                      | section    |
 | [selecao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22sele%C3%A7%C3%A3o%22)                     | select     |
