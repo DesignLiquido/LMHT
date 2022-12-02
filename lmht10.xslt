@@ -163,6 +163,13 @@
             <xsl:apply-templates select="@*|node()" />
         </style>
     </xsl:template>
+    <!-- Estrutura style é apenas replicada para ser usada por FolEs. -->
+    <!-- https://github.com/DesignLiquido/FolEs -->
+    <xsl:template match="lmht/cabeca/style|lmht/cabeça/style">
+        <style>
+            <xsl:apply-templates select="@*|node()" />
+        </style>
+    </xsl:template>
     <xsl:template match="lmht/cabeca/meta|lmht/cabeça/meta">
         <meta>
             <xsl:for-each select="@*">
