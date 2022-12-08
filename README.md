@@ -1,7 +1,27 @@
 # LMHT
 
 <p align="center">
-    <img src="./recursos/imagens/lmht-laranja.svg" width="254" height="287" />
+    <img src="./recursos/imagens/lmht-laranja.svg" width="127" height="143" />
+</p>
+
+<p align="center">
+    <a href="https://github.com/DesignLiquido/LMHT/issues" target="_blank"><img src="https://img.shields.io/github/issues/Designliquido/LMHT" /></a>
+    <img src="https://img.shields.io/github/stars/Designliquido/LMHT" />
+    <img src="https://img.shields.io/github/forks/Designliquido/LMHT" />
+    <img src="https://img.shields.io/github/license/Designliquido/LMHT" />
+    <br />
+</p>
+
+<p align="center">
+    Acompanhe a Design Líquido nas redes sociais:
+</p>
+
+<p align="center">
+    <a href="https://twitter.com/designliquido" target="_blank"> <img src="https://img.shields.io/badge/-Twitter-1ca0f1?style=flat&labelColor=1ca0f1&logo=twitter&logoColor=white&link=Twitter" /></a>
+    <a href="https://www.instagram.com/design.liquido" target="_blank"><img src="https://img.shields.io/badge/-Instagram-c13584?style=flat&labelColor=c13584&logo=instagram&logoColor=white" /></a>
+    <a href="https://www.youtube.com/channel/UCJRn3B7r0aex6LCaOyrQtZQ" target="_blank"><img src="https://img.shields.io/badge/-YouTube-ff0000?style=flat-square&labelColor=ff0000&logo=youtube&logoColor=white" /></a>
+    <a href="https://www.linkedin.com/company/design-liquido" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-blue?style=flat&logo=Linkedin&logoColor=white" /></a>
+    <a href="https://www.tiktok.com/@designliquido" target="_blank"><img src="https://img.shields.io/static/v1?style=for-the-badge&message=TikTok&color=black&logo=TikTok&logoColor=white&label=" /></a>
 </p>
 
 Especificação da Linguagem de Marcação Hiper Texto, LMHT.
