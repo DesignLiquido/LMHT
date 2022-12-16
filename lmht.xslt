@@ -327,7 +327,7 @@
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'formulario' or name() = 'formulário'">
-                        <xsl:attribute name="disabled">
+                        <xsl:attribute name="form">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
