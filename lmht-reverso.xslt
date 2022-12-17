@@ -185,7 +185,7 @@
                 </xsl:choose>
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
-        </area>
+        </área>
     </xsl:template>
     <xsl:template match="html/body//textarea">
         <área-texto>
@@ -259,6 +259,30 @@
                 </xsl:choose>
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
-        </textarea>
+        </área-texto>
+    </xsl:template>
+    <xsl:template match="html/body//article">
+        <artigo>
+            <xsl:apply-templates select="@*|node()" />
+        </artigo>
+    </xsl:template>
+    <xsl:template match="html/body//q">
+        <aspas>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'cite'">
+                        <xsl:attribute name="citar">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </aspas>
     </xsl:template>
 </xsl:transform>
