@@ -777,7 +777,7 @@
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'altura'">
-                        <xsl:attribute name="hight">
+                        <xsl:attribute name="height">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>

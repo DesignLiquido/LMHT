@@ -13,6 +13,24 @@
             <xsl:when test="$Target = '_top'">_topo</xsl:when>
         </xsl:choose>
     </xsl:template>
+    <xsl:template name="ProcessarRels">
+        <xsl:param name="Rel" />
+        <xsl:choose>
+            <xsl:when test="$Rel = 'help'">ajuda</xsl:when>
+            <xsl:when test="$Rel = 'alternate'">alternativa</xsl:when>
+            <xsl:when test="$Rel = 'prev'">anterior</xsl:when>
+            <xsl:when test="$Rel = 'author'">autor</xsl:when>
+            <xsl:when test="$Rel = 'external'">externo</xsl:when>
+            <xsl:when test="$Rel = 'license'">licença</xsl:when>
+            <xsl:when test="$Rel = 'bookmark'">marcador</xsl:when>
+            <xsl:when test="$Rel = 'nofollow'">não-seguir</xsl:when>
+            <xsl:when test="$Rel = 'tag'">palavra-chave</xsl:when>
+            <xsl:when test="$Rel = 'search'">pesquisa</xsl:when>
+            <xsl:when test="$Rel = 'next'">próximo</xsl:when>
+            <xsl:when test="$Rel = 'noreferrer'">sem-anterior</xsl:when>
+            <xsl:when test="$Rel = 'noopener'">sem-janela-abertura</xsl:when>
+        </xsl:choose>
+    </xsl:template>
     <xsl:template name="ProcessarShape">
         <xsl:param name="Shape" />
         <xsl:choose>
@@ -284,5 +302,451 @@
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
         </aspas>
+    </xsl:template>
+    <xsl:template match="html/body//audio">
+        <áudio>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'controls'">
+                        <xsl:attribute name="controles">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autoplay'">
+                        <xsl:attribute name="início-automático">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'name'">
+                        <xsl:attribute name="nome">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'muted'">
+                        <xsl:attribute name="mudo">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'src'">
+                        <xsl:attribute name="origem">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'preload'">
+                        <xsl:attribute name="pré-carregar">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'loop'">
+                        <xsl:attribute name="repetir">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </áudio>
+    </xsl:template>
+    <xsl:template match="html/body//button">
+        <botão>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'formaction'">
+                        <xsl:attribute name="ação-formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'formtarget'">
+                        <xsl:attribute name="alvo-formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autofocus'">
+                        <xsl:attribute name="autofoco">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'formenctype'">
+                        <xsl:attribute name="codificação-formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'disabled'">
+                        <xsl:attribute name="desabilitado">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'form'">
+                        <xsl:attribute name="formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'formmethod'">
+                        <xsl:attribute name="método-formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'formnovalidate'">
+                        <xsl:attribute name="não-validar-formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'name'">
+                        <xsl:attribute name="nome">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'type'">
+                        <xsl:attribute name="tipo">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'value'">
+                        <xsl:attribute name="valor">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </botão>
+    </xsl:template>
+    <xsl:template match="html/body//canvas">
+        <canvas>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'height'">
+                        <xsl:attribute name="altura">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'width'">
+                        <xsl:attribute name="largura">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </canvas>
+    </xsl:template>
+    <xsl:template match="html/body//blockquote">
+        <citação>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'cite'">
+                        <xsl:attribute name="citar">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </citação>
+    </xsl:template>
+    <xsl:template match="html/body//cite">
+        <citar>
+            <xsl:apply-templates select="@*|node()" />
+        </citar>
+    </xsl:template>
+    <xsl:template match="html/body//code">
+        <código>
+            <xsl:apply-templates select="@*|node()" />
+        </código>
+    </xsl:template>
+    <xsl:template match="html/body//data">
+        <dados>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'value'">
+                        <xsl:attribute name="valor">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </dados>
+    </xsl:template>
+    <xsl:template match="html/body//dfn">
+        <definição>
+            <xsl:apply-templates select="@*|node()" />
+        </definição>
+    </xsl:template>
+    <xsl:template match="html/body//details">
+        <detalhes>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'abertos'">
+                        <xsl:attribute name="open">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </detalhes>
+    </xsl:template>
+    <xsl:template match="html/body//details/summary">
+        <sumário>
+            <xsl:apply-templates select="@*|node()" />
+        </sumário>
+    </xsl:template>
+    <xsl:template match="html/body//div">
+        <divisão>
+            <xsl:apply-templates select="@*|node()" />
+        </divisão>
+    </xsl:template>
+    <xsl:template match="html/body//address">
+        <endereço>
+            <xsl:apply-templates select="@*|node()" />
+        </endereço>
+    </xsl:template>
+    <xsl:template match="html/body//span">
+        <envelope-texto>
+            <xsl:apply-templates select="@*|node()" />
+        </envelope-texto>
+    </xsl:template>
+    <xsl:template match="html/body//label">
+        <etiqueta>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'form'">
+                        <xsl:attribute name="formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'for'">
+                        <xsl:attribute name="para">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </etiqueta>
+    </xsl:template>
+    <xsl:template match="html/body//del">
+        <excluído>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'cite'">
+                        <xsl:attribute name="citar">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'datetime'">
+                        <xsl:attribute name="data">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </excluído>
+    </xsl:template>
+    <xsl:template match="html/body//samp">
+        <exemplo>
+            <xsl:apply-templates select="@*|node()" />
+        </exemplo>
+    </xsl:template>
+    <xsl:template match="html/body//figure">
+        <figura>
+            <xsl:apply-templates select="@*|node()" />
+        </figura>
+    </xsl:template>
+    <xsl:template match="html/body//figure/figcaption">
+        <descrição>
+            <xsl:apply-templates select="@*|node()" />
+        </descrição>
+    </xsl:template>
+
+    <!-- Formulários -->
+    <xsl:template match="html/body//form">
+        <formulário>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'action'">
+                        <xsl:attribute name="ação">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'accept-charset'">
+                        <xsl:attribute name="aceita-codificação-texto">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'target'">
+                        <xsl:attribute name="alvo">
+                            <xsl:call-template name="ProcessarTargets">
+                                <xsl:with-param name="Target" select="." />
+                            </xsl:call-template>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autocomplete'">
+                        <xsl:attribute name="autocompletar">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'enctype'">
+                        <xsl:attribute name="codificação">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'method'">
+                        <xsl:attribute name="método">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'name'">
+                        <xsl:attribute name="nome">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'novalidate'">
+                        <xsl:attribute name="não-validar">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'rel'">
+                        <xsl:attribute name="relacionamento">
+                            <xsl:call-template name="ProcessarRels">
+                                <xsl:with-param name="Rel" select="." />
+                            </xsl:call-template>
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </formulário>
+    </xsl:template>
+    <xsl:template match="html/body//form/fieldset">
+        <campos>
+            <xsl:apply-templates select="@*|node()" />
+        </campos>
+    </xsl:template>
+    <xsl:template match="html/body//form/fieldset/input|html/body//form/input">
+        <campo>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'accept'">
+                        <xsl:attribute name="aceita">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'height'">
+                        <xsl:attribute name="altura">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autocomplete'">
+                        <xsl:attribute name="autocompletar">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'autofocus'">
+                        <xsl:attribute name="autofoco">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'dirname'">
+                        <xsl:attribute name="direção-texto">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'form'">
+                        <xsl:attribute name="formulário">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'width'">
+                        <xsl:attribute name="largura">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'name'">
+                        <xsl:attribute name="nome">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'required'">
+                        <xsl:attribute name="obrigatório">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'checked'">
+                        <xsl:attribute name="selecionado">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'size'">
+                        <xsl:attribute name="tamanho">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'type'">
+                        <xsl:attribute name="tipo">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'valor'">
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </campo>
     </xsl:template>
 </xsl:transform>

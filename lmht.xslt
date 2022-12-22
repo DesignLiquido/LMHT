@@ -692,7 +692,7 @@
             <xsl:apply-templates select="@*|node()" />
         </figure>
     </xsl:template>
-    <xsl:template match="lmht/corpo//figura/descricao|lmht/corpo//figura/descriçao|lmht/corpo//figura/descrição">
+    <xsl:template match="lmht/corpo//figura/descricao|lmht/corpo//figura/descrição">
         <figcaption>
             <xsl:apply-templates select="@*|node()" />
         </figcaption>
@@ -777,7 +777,7 @@
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'altura'">
-                        <xsl:attribute name="hight">
+                        <xsl:attribute name="height">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
