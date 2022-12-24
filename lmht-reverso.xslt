@@ -13,6 +13,18 @@
             <xsl:when test="$Target = '_top'">_topo</xsl:when>
         </xsl:choose>
     </xsl:template>
+    <xsl:template name="ProcessarReferrerPolicy">
+        <xsl:param name="Policy" />
+        <xsl:choose>
+            <xsl:when test="$Policy = 'unsafe-url'">destino-não-seguro</xsl:when>
+            <xsl:when test="$Policy = 'same-origin'">mesma-origem</xsl:when>
+            <xsl:when test="$Policy = 'origin'">origem</xsl:when>
+            <xsl:when test="$Policy = 'origin-when-cross-origin'">origem-quando-origem-cruzada</xsl:when>
+            <xsl:when test="$Policy = 'strict-origin-when-cross-origin'">origem-quando-origem-cruzada-rigorosa</xsl:when>
+            <xsl:when test="$Policy = 'no-referrer'">sem-referenciador</xsl:when>
+            <xsl:when test="$Policy = 'no-referrer-when-downgrade'">sem-referenciador-ao-rebaixar</xsl:when>
+        </xsl:choose>
+    </xsl:template>
     <xsl:template name="ProcessarRels">
         <xsl:param name="Rel" />
         <xsl:choose>
@@ -748,5 +760,125 @@
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
         </campo>
+    </xsl:template>
+    
+    <xsl:template match="html/body//form/legend">
+        <título>
+            <xsl:apply-templates select="@*|node()" />
+        </título>
+    </xsl:template>
+    <xsl:template match="html/body//img">
+        <imagem>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'height'">
+                        <xsl:attribute name="altura">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'style'">
+                        <xsl:attribute name="estilo">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'width'">
+                        <xsl:attribute name="largura">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'alt'">
+                        <xsl:attribute name="legenda">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'usemap'">
+                        <xsl:attribute name="mapa">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'src'">
+                        <xsl:attribute name="origem">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </imagem>
+    </xsl:template>
+    <xsl:template match="html/body//template">
+        <invisível>
+            <xsl:apply-templates select="@*|node()" />
+        </invisível>
+    </xsl:template>
+    <xsl:template match="html/body//em">
+        <itálico>
+            <xsl:apply-templates select="@*|node()" />
+        </itálico>
+    </xsl:template>
+    <xsl:template match="html/body//a">
+        <ligação>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'target'">
+                        <xsl:attribute name="alvo">
+                            <xsl:call-template name="ProcessarTargets">
+                                <xsl:with-param name="Target" select="." />
+                            </xsl:call-template>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'href'">
+                        <xsl:attribute name="destino">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'hreflang'">
+                        <xsl:attribute name="idioma">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'media'">
+                        <xsl:attribute name="mídia">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'download'">
+                        <xsl:attribute name="nome-arquivo">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'referrerpolicy'">
+                        <xsl:attribute name="política-referência">
+                            <xsl:call-template name="ProcessarReferrerPolicy">
+                                <xsl:with-param name="Policy" select="." />
+                            </xsl:call-template>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'rel'">
+                        <xsl:attribute name="relacionamento">
+                            <xsl:call-template name="ProcessarRels">
+                                <xsl:with-param name="Rel" select="." />
+                            </xsl:call-template>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'type'">
+                        <xsl:attribute name="tipo">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </a>
     </xsl:template>
 </xsl:transform>
