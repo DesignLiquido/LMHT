@@ -881,4 +881,24 @@
             <xsl:apply-templates select="node()" />
         </a>
     </xsl:template>
+    <xsl:template match="html/body//hr">
+        <linha-horizontal />
+    </xsl:template>
+
+    <!-- Listas -->
+    <xsl:template match="html/body//dl">
+        <lista-definições>
+            <xsl:apply-templates select="@*|node()" />
+        </lista-definições>
+    </xsl:template>
+    <xsl:template match="html/body//dl/dt">
+        <termo>
+            <xsl:apply-templates select="@*|node()" />
+        </termo>
+    </xsl:template>
+    <xsl:template match="html/body//dl/dd">
+        <definição>
+            <xsl:apply-templates select="@*|node()" />
+        </definição>
+    </xsl:template>
 </xsl:transform>

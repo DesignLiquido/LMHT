@@ -995,17 +995,17 @@
     </xsl:template>
 
     <!-- Listas -->
-    <xsl:template match="lmht/corpo//lista-definicoes|lmht/corpo//lista-definiçoes|lmht/corpo//lista-definições">
+    <xsl:template match="lmht/corpo//lista-definicoes|lmht/corpo//lista-definições">
         <dl>
             <xsl:apply-templates select="@*|node()" />
         </dl>
     </xsl:template>
-    <xsl:template match="lmht/corpo//lista-definicoes/termo|lmht/corpo//lista-definiçoes/termo|lmht/corpo//lista-definições/termo">
+    <xsl:template match="lmht/corpo//lista-definicoes/termo|lmht/corpo//lista-definições/termo">
         <dt>
             <xsl:apply-templates select="@*|node()" />
         </dt>
     </xsl:template>
-    <xsl:template match="lmht/corpo//lista-definicoes/definicao|lmht/corpo//lista-definiçoes/definicao|lmht/corpo//lista-definições/definicao|lmht/corpo//lista-definicoes/definiçao|lmht/corpo//lista-definiçoes/definiçao|lmht/corpo//lista-definições/definiçao|lmht/corpo//lista-definicoes/definição|lmht/corpo//lista-definiçoes/definição|lmht/corpo//lista-definições/definição">
+    <xsl:template match="lmht/corpo//lista-definicoes/definicao|lmht/corpo//lista-definições/definicao|lmht/corpo//lista-definicoes/definição|lmht/corpo//lista-definições/definição">
         <dd>
             <xsl:apply-templates select="@*|node()" />
         </dd>
