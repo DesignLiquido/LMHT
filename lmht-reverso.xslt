@@ -879,7 +879,7 @@
                 </xsl:choose>
             </xsl:for-each>
             <xsl:apply-templates select="node()" />
-        </a>
+        </ligação>
     </xsl:template>
     <xsl:template match="html/body//hr">
         <linha-horizontal />
