@@ -160,7 +160,7 @@
         </aparte>
     </xsl:template>
     <xsl:template match="html/body//area">
-        <area>
+        <área>
             <xsl:for-each select="@*">
                 <xsl:choose>
                     <xsl:when test="name() = 'target'">
