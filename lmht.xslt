@@ -1020,7 +1020,7 @@
             <xsl:apply-templates select="@*|node()" />
         </datalist>
     </xsl:template>
-    <xsl:template match="lmht/corpo//lista-pesquisavel/opcao|lmht/corpo//lista-pesquisavel/opçao|lmht/corpo//lista-pesquisavel/opção|lmht/corpo//lista-pesquisável/opcao|lmht/corpo//lista-pesquisável/opçao|lmht/corpo//lista-pesquisável/opção">
+    <xsl:template match="lmht/corpo//lista-pesquisavel/opcao|lmht/corpo//lista-pesquisavel/opção|lmht/corpo//lista-pesquisável/opcao|lmht/corpo//lista-pesquisável/opção">
         <option>
             <xsl:apply-templates select="@*|node()" />
         </option>
@@ -1074,7 +1074,7 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'minimo'">
+                    <xsl:when test="name() = 'minimo' or name() = 'mínimo'">
                         <xsl:attribute name="min">
                             <xsl:value-of select="." />
                         </xsl:attribute>
@@ -1152,7 +1152,7 @@
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'minimo'">
+                    <xsl:when test="name() = 'minimo' or name() = 'mínimo'">
                         <xsl:attribute name="min">
                             <xsl:value-of select="." />
                         </xsl:attribute>
@@ -1211,12 +1211,12 @@
     </xsl:template>
 
     <!-- Seleção -->
-    <xsl:template match="lmht/corpo//selecao|lmht/corpo//seleçao|lmht/corpo//seleção">
+    <xsl:template match="lmht/corpo//selecao|lmht/corpo//seleção">
         <select>
             <xsl:apply-templates select="@*|node()" />
         </select>
     </xsl:template>
-    <xsl:template match="lmht/corpo//selecao/grupo-opcoes|lmht/corpo//selecao/grupo-opçoes|lmht/corpo//selecao/grupo-opções|lmht/corpo//seleçao/grupo-opcoes|lmht/corpo//seleçao/grupo-opçoes|lmht/corpo//seleçao/grupo-opções|lmht/corpo//seleção/grupo-opcoes|lmht/corpo//seleção/grupo-opçoes|lmht/corpo//seleção/grupo-opções">
+    <xsl:template match="lmht/corpo//selecao/grupo-opcoes|lmht/corpo//selecao/grupo-opções|lmht/corpo//seleção/grupo-opcoes|lmht/corpo//seleção/grupo-opções">
         <optgroup>
             <xsl:apply-templates select="@*|node()" />
         </optgroup>
