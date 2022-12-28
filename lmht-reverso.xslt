@@ -52,6 +52,12 @@
             <xsl:when test="$Shape = 'poly'">polígono</xsl:when>
         </xsl:choose>
     </xsl:template>
+
+    <xsl:template match="html">
+        <lmht>
+            <xsl:apply-templates select="node()" />
+        </lmht>
+    </xsl:template>
     
     <!-- Especificação de `head` -->
     <xsl:template match="html/head">

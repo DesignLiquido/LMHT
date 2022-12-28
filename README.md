@@ -242,6 +242,14 @@ $xslt.load("lmht.xslt");
 $xslt.Transform("exemplo.lmht", "exemplo.html");
 ```
 
+Para uma transformação reversa (de HTML para LMHT), use:
+
+```powershell
+$xsltReverso = New-Object System.Xml.Xsl.XslCompiledTransform;
+$xsltReverso.load("lmht-reverso.xslt");
+$xsltReverso.Transform("exemplo.html", "exemplo-reverso.lmht");
+```
+
 ### Groovy e outras linguagens na JVM
 
 Usando [`groovysh`](https://groovy-lang.org/groovysh.html): 
