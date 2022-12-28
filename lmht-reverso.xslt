@@ -53,6 +53,70 @@
         </xsl:choose>
     </xsl:template>
 
+    <!-- Atributos independentes de tags (globais) -->
+    <!-- Por algum motivo, adicionar `id` aqui não funciona. -->
+    <!-- Atributo id, portanto, é usado em todas as estruturas de `<corpo>`. -->
+    <xsl:template match="@draggable">
+        <xsl:attribute name="arrastável">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@accesskey">
+        <xsl:attribute name="atalho">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@class">
+        <xsl:attribute name="classe">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@contenteditable">
+        <xsl:attribute name="conteúdo-editável">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@dir">
+        <xsl:attribute name="@direção-texto">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@hidden">
+        <xsl:attribute name="escondido">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@style">
+        <xsl:attribute name="estilo">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@lang">
+        <xsl:attribute name="idioma">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>    
+    <xsl:template match="@tabindex">
+        <xsl:attribute name="@índice-tab">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@title">
+        <xsl:attribute name="título">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@translate">
+        <xsl:attribute name="traduzir">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+    <xsl:template match="@spellcheck">
+        <xsl:attribute name="verificar-grafia">
+            <xsl:value-of select="." />
+        </xsl:attribute>
+    </xsl:template>
+
     <xsl:template match="html">
         <lmht>
             <xsl:apply-templates select="node()" />

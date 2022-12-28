@@ -79,12 +79,12 @@
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@conteudo-editavel|@conteúdo-editavel|@conteudo-editável|@conteúdo-editável">
+    <xsl:template match="@conteudo-editavel|@conteúdo-editável">
         <xsl:attribute name="contenteditable">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
-    <xsl:template match="@direcao-texto|@direçao-texto|@direcão-texto|@direção-texto">
+    <xsl:template match="@direcao-texto|@direção-texto">
         <xsl:attribute name="dir">
             <xsl:value-of select="." />
         </xsl:attribute>
