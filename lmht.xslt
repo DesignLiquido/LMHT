@@ -518,6 +518,20 @@
             <xsl:apply-templates select="node()" />
         </button>
     </xsl:template>
+       <xsl:template match="lmht/corpo//cabecalho|lmht/corpo//cabeçalho">
+        <header>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="@title|node()" />
+        </header>
+    </xsl:template>
     <xsl:template match="lmht/corpo//canvas">
         <canvas>
             <xsl:for-each select="@*">
