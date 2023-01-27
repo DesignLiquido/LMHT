@@ -527,6 +527,20 @@
             <xsl:apply-templates select="node()" />
         </canvas>
     </xsl:template>
+    <xsl:template match="html/body//header">
+        <cabeçalho>
+            <xsl:for-each select="@*">
+                <xsl:choose>
+                    <xsl:when test="name() = 'id'">
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                </xsl:choose>
+            </xsl:for-each>
+            <xsl:apply-templates select="node()" />
+        </cabeçalho>
+    </xsl:template>
     <xsl:template match="html/body//blockquote">
         <citação>
             <xsl:for-each select="@*">
