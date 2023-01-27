@@ -518,7 +518,7 @@
             <xsl:apply-templates select="node()" />
         </button>
     </xsl:template>
-       <xsl:template match="lmht/corpo//cabecalho|lmht/corpo//cabeçalho">
+    <xsl:template match="lmht/corpo//cabecalho|lmht/corpo//cabeçalho">
         <header>
             <xsl:for-each select="@*">
                 <xsl:choose>
