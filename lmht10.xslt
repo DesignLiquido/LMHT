@@ -125,7 +125,7 @@
         </xsl:attribute>
     </xsl:template>
 
-    <xsl:template match="lmht">
+    <xsl:template match="/lmht">
         <html>
             <xsl:apply-templates select="node()" />
         </html>

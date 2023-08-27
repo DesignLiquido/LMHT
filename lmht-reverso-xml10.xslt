@@ -117,19 +117,19 @@
         </xsl:attribute>
     </xsl:template>
 
-    <xsl:template match="html">
+    <xsl:template match="/html">
         <lmht>
             <xsl:apply-templates select="node()" />
         </lmht>
     </xsl:template>
     
     <!-- Especificação de `head` -->
-    <xsl:template match="html/head">
+    <xsl:template match="/html/head">
         <cabeça>
             <xsl:apply-templates select="@*|node()" />
         </cabeça>
     </xsl:template>
-    <xsl:template match="html/base">
+    <xsl:template match="/html/base">
         <base-ligações>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -150,12 +150,12 @@
             <xsl:apply-templates select="node()" />
         </base-ligações>
     </xsl:template>
-    <xsl:template match="html/style">
+    <xsl:template match="/html/style">
         <estilo>
             <xsl:apply-templates select="@*|node()" />
         </estilo>
     </xsl:template>
-    <xsl:template match="html/head/meta">
+    <xsl:template match="/html/head/meta">
         <meta>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -174,7 +174,7 @@
             <xsl:apply-templates select="node()" />
         </meta>
     </xsl:template>
-    <xsl:template match="html/head/link">
+    <xsl:template match="/html/head/link">
         <recurso>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -193,19 +193,19 @@
             <xsl:apply-templates select="node()" />
         </recurso>
     </xsl:template>
-    <xsl:template match="html/head/title">
+    <xsl:template match="/html/head/title">
         <título>
             <xsl:apply-templates select="@*|node()" />
         </título>
     </xsl:template>
 
     <!-- Especificação de `body` -->
-    <xsl:template match="html/body">
+    <xsl:template match="/html/body">
         <corpo>
             <xsl:apply-templates select="@*|node()" />
         </corpo>
     </xsl:template>
-    <xsl:template match="html/body//abbr">
+    <xsl:template match="/html/body//abbr">
         <abreviação>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -224,12 +224,12 @@
             <xsl:apply-templates select="node()" />
         </abreviação>
     </xsl:template>
-    <xsl:template match="html/body//aside">
+    <xsl:template match="/html/body//aside">
         <aparte>
             <xsl:apply-templates select="@*|node()" />
         </aparte>
     </xsl:template>
-    <xsl:template match="html/body//area">
+    <xsl:template match="/html/body//area">
         <área>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -287,7 +287,7 @@
             <xsl:apply-templates select="node()" />
         </área>
     </xsl:template>
-    <xsl:template match="html/body//textarea">
+    <xsl:template match="/html/body//textarea">
         <área-texto>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -361,12 +361,12 @@
             <xsl:apply-templates select="node()" />
         </área-texto>
     </xsl:template>
-    <xsl:template match="html/body//article">
+    <xsl:template match="/html/body//article">
         <artigo>
             <xsl:apply-templates select="@*|node()" />
         </artigo>
     </xsl:template>
-    <xsl:template match="html/body//q">
+    <xsl:template match="/html/body//q">
         <aspas>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -385,7 +385,7 @@
             <xsl:apply-templates select="node()" />
         </aspas>
     </xsl:template>
-    <xsl:template match="html/body//audio">
+    <xsl:template match="/html/body//audio">
         <áudio>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -434,7 +434,7 @@
             <xsl:apply-templates select="node()" />
         </áudio>
     </xsl:template>
-    <xsl:template match="html/body//button">
+    <xsl:template match="/html/body//button">
         <botão>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -503,7 +503,7 @@
             <xsl:apply-templates select="node()" />
         </botão>
     </xsl:template>
-    <xsl:template match="html/body//header">
+    <xsl:template match="/html/body//header">
         <cabeçalho>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -517,7 +517,7 @@
             <xsl:apply-templates select="node()" />
         </cabeçalho>
     </xsl:template>
-    <xsl:template match="html/body//canvas">
+    <xsl:template match="/html/body//canvas">
         <canvas>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -541,7 +541,7 @@
             <xsl:apply-templates select="node()" />
         </canvas>
     </xsl:template>
-    <xsl:template match="html/body//blockquote">
+    <xsl:template match="/html/body//blockquote">
         <citação>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -560,17 +560,17 @@
             <xsl:apply-templates select="node()" />
         </citação>
     </xsl:template>
-    <xsl:template match="html/body//cite">
+    <xsl:template match="/html/body//cite">
         <citar>
             <xsl:apply-templates select="@*|node()" />
         </citar>
     </xsl:template>
-    <xsl:template match="html/body//code">
+    <xsl:template match="/html/body//code">
         <código>
             <xsl:apply-templates select="@*|node()" />
         </código>
     </xsl:template>
-    <xsl:template match="html/body//data">
+    <xsl:template match="/html/body//data">
         <dados>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -589,12 +589,12 @@
             <xsl:apply-templates select="node()" />
         </dados>
     </xsl:template>
-    <xsl:template match="html/body//dfn">
+    <xsl:template match="/html/body//dfn">
         <definição>
             <xsl:apply-templates select="@*|node()" />
         </definição>
     </xsl:template>
-    <xsl:template match="html/body//details">
+    <xsl:template match="/html/body//details">
         <detalhes>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -613,27 +613,27 @@
             <xsl:apply-templates select="node()" />
         </detalhes>
     </xsl:template>
-    <xsl:template match="html/body//details/summary">
+    <xsl:template match="/html/body//details/summary">
         <sumário>
             <xsl:apply-templates select="@*|node()" />
         </sumário>
     </xsl:template>
-    <xsl:template match="html/body//div">
+    <xsl:template match="/html/body//div">
         <divisão>
             <xsl:apply-templates select="@*|node()" />
         </divisão>
     </xsl:template>
-    <xsl:template match="html/body//address">
+    <xsl:template match="/html/body//address">
         <endereço>
             <xsl:apply-templates select="@*|node()" />
         </endereço>
     </xsl:template>
-    <xsl:template match="html/body//span">
+    <xsl:template match="/html/body//span">
         <envelope-texto>
             <xsl:apply-templates select="@*|node()" />
         </envelope-texto>
     </xsl:template>
-    <xsl:template match="html/body//label">
+    <xsl:template match="/html/body//label">
         <etiqueta>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -657,7 +657,7 @@
             <xsl:apply-templates select="node()" />
         </etiqueta>
     </xsl:template>
-    <xsl:template match="html/body//del">
+    <xsl:template match="/html/body//del">
         <excluído>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -681,24 +681,24 @@
             <xsl:apply-templates select="node()" />
         </excluído>
     </xsl:template>
-    <xsl:template match="html/body//samp">
+    <xsl:template match="/html/body//samp">
         <exemplo>
             <xsl:apply-templates select="@*|node()" />
         </exemplo>
     </xsl:template>
-    <xsl:template match="html/body//figure">
+    <xsl:template match="/html/body//figure">
         <figura>
             <xsl:apply-templates select="@*|node()" />
         </figura>
     </xsl:template>
-    <xsl:template match="html/body//figure/figcaption">
+    <xsl:template match="/html/body//figure/figcaption">
         <descrição>
             <xsl:apply-templates select="@*|node()" />
         </descrição>
     </xsl:template>
 
     <!-- Formulários -->
-    <xsl:template match="html/body//form">
+    <xsl:template match="/html/body//form">
         <formulário>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -761,12 +761,12 @@
             <xsl:apply-templates select="node()" />
         </formulário>
     </xsl:template>
-    <xsl:template match="html/body//form/fieldset">
+    <xsl:template match="/html/body//form/fieldset">
         <campos>
             <xsl:apply-templates select="@*|node()" />
         </campos>
     </xsl:template>
-    <xsl:template match="html/body//form/fieldset/input|html/body//form/input">
+    <xsl:template match="/html/body//form/fieldset/input|html/body//form/input">
         <campo>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -846,12 +846,12 @@
         </campo>
     </xsl:template>
     
-    <xsl:template match="html/body//form/legend">
+    <xsl:template match="/html/body//form/legend">
         <título>
             <xsl:apply-templates select="@*|node()" />
         </título>
     </xsl:template>
-    <xsl:template match="html/body//img">
+    <xsl:template match="/html/body//img">
         <imagem>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -895,17 +895,17 @@
             <xsl:apply-templates select="node()" />
         </imagem>
     </xsl:template>
-    <xsl:template match="html/body//template">
+    <xsl:template match="/html/body//template">
         <invisível>
             <xsl:apply-templates select="@*|node()" />
         </invisível>
     </xsl:template>
-    <xsl:template match="html/body//em">
+    <xsl:template match="/html/body//em">
         <itálico>
             <xsl:apply-templates select="@*|node()" />
         </itálico>
     </xsl:template>
-    <xsl:template match="html/body//a">
+    <xsl:template match="/html/body//a">
         <ligação>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -965,53 +965,53 @@
             <xsl:apply-templates select="node()" />
         </ligação>
     </xsl:template>
-    <xsl:template match="html/body//hr">
+    <xsl:template match="/html/body//hr">
         <linha-horizontal />
     </xsl:template>
 
     <!-- Listas -->
-    <xsl:template match="html/body//dl">
+    <xsl:template match="/html/body//dl">
         <lista-definições>
             <xsl:apply-templates select="@*|node()" />
         </lista-definições>
     </xsl:template>
-    <xsl:template match="html/body//dl/dt">
+    <xsl:template match="/html/body//dl/dt">
         <termo>
             <xsl:apply-templates select="@*|node()" />
         </termo>
     </xsl:template>
-    <xsl:template match="html/body//dl/dd">
+    <xsl:template match="/html/body//dl/dd">
         <definição>
             <xsl:apply-templates select="@*|node()" />
         </definição>
     </xsl:template>
-    <xsl:template match="html/body//ol">
+    <xsl:template match="/html/body//ol">
         <lista-numerada>
             <xsl:apply-templates select="@*|node()" />
         </lista-numerada>
     </xsl:template>
-    <xsl:template match="html/body//datalist">
+    <xsl:template match="/html/body//datalist">
         <lista-pesquisável>
             <xsl:apply-templates select="@*|node()" />
         </lista-pesquisável>
     </xsl:template>
-    <xsl:template match="html/body//datalist/option">
+    <xsl:template match="/html/body//datalist/option">
         <opção>
             <xsl:apply-templates select="@*|node()" />
         </opção>
     </xsl:template>
-    <xsl:template match="html/body//ul">
+    <xsl:template match="/html/body//ul">
         <lista-simples>
             <xsl:apply-templates select="@*|node()" />
         </lista-simples>
     </xsl:template>
-    <xsl:template match="html/body//ol/li|html/body//ul/li">
+    <xsl:template match="/html/body//ol/li|html/body//ul/li">
         <item-lista>
             <xsl:apply-templates select="node()" />
         </item-lista>
     </xsl:template>
 
-    <xsl:template match="html/body//map">
+    <xsl:template match="/html/body//map">
         <mapa>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1030,12 +1030,12 @@
             <xsl:apply-templates select="node()" />
         </mapa>
     </xsl:template>
-    <xsl:template match="html/body//mark">
+    <xsl:template match="/html/body//mark">
         <marca>
             <xsl:apply-templates select="@*|node()" />
         </marca>
     </xsl:template>
-    <xsl:template match="html/body//meter">
+    <xsl:template match="/html/body//meter">
         <medidor>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1064,7 +1064,7 @@
             <xsl:apply-templates select="node()" />
         </medidor>
     </xsl:template>
-    <xsl:template match="html/body//dialog">
+    <xsl:template match="/html/body//dialog">
         <modal>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1083,37 +1083,37 @@
             <xsl:apply-templates select="@*|node()" />
         </modal>
     </xsl:template>
-    <xsl:template match="html/body//nav">
+    <xsl:template match="/html/body//nav">
         <navegação>
             <xsl:apply-templates select="@*|node()" />
         </navegação>
     </xsl:template>
-    <xsl:template match="html/body//strong">
+    <xsl:template match="/html/body//strong">
         <negrito>
             <xsl:apply-templates select="@*|node()" />
         </negrito>
     </xsl:template>
-    <xsl:template match="html/body//object">
+    <xsl:template match="/html/body//object">
         <objeto>
             <xsl:apply-templates select="@*|node()" />
         </objeto>
     </xsl:template>
-    <xsl:template match="html/body//p">
+    <xsl:template match="/html/body//p">
         <parágrafo>
             <xsl:apply-templates select="@*|node()" />
         </parágrafo>
     </xsl:template>
-    <xsl:template match="html/body//pre">
+    <xsl:template match="/html/body//pre">
         <preformatado>
             <xsl:apply-templates select="@*|node()" />
         </preformatado>
     </xsl:template>
-    <xsl:template match="html/body//main">
+    <xsl:template match="/html/body//main">
         <principal>
             <xsl:apply-templates select="@*|node()" />
         </principal>
     </xsl:template>
-    <xsl:template match="html/body//progress">
+    <xsl:template match="/html/body//progress">
         <progresso>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1142,15 +1142,15 @@
             <xsl:apply-templates select="node()" />
         </progresso>
     </xsl:template>
-    <xsl:template match="html/body//br">
+    <xsl:template match="/html/body//br">
         <quebra-linha />
     </xsl:template>
-    <xsl:template match="html/body//wbr">
+    <xsl:template match="/html/body//wbr">
         <quebra-linha-oportuna>
             <xsl:apply-templates select="@*|node()" />
         </quebra-linha-oportuna>
     </xsl:template>
-    <xsl:template match="html/body//source">
+    <xsl:template match="/html/body//source">
         <recurso>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1169,50 +1169,50 @@
             <xsl:apply-templates select="node()" />
         </recurso>
     </xsl:template>
-    <xsl:template match="html/body//s">
+    <xsl:template match="/html/body//s">
         <riscado>
             <xsl:apply-templates select="@*|node()" />
         </riscado>
     </xsl:template>
-    <xsl:template match="html/body//script">
+    <xsl:template match="/html/body//script">
         <script>
             <xsl:apply-templates select="@*|node()" />
         </script>
     </xsl:template>
-    <xsl:template match="html/body//section">
+    <xsl:template match="/html/body//section">
         <seção>
             <xsl:apply-templates select="@*|node()" />
         </seção>
     </xsl:template>
 
     <!-- Seleção -->
-    <xsl:template match="html/body//select">
+    <xsl:template match="/html/body//select">
         <seleção>
             <xsl:apply-templates select="@*|node()" />
         </seleção>
     </xsl:template>
-    <xsl:template match="html/body//select/optgroup">
+    <xsl:template match="/html/body//select/optgroup">
         <grupo-opções>
             <xsl:apply-templates select="@*|node()" />
         </grupo-opções>
     </xsl:template>
-    <xsl:template match="html/body//optgroup/option|html/body//select/option">
+    <xsl:template match="/html/body//optgroup/option|html/body//select/option">
         <opção>
             <xsl:apply-templates select="@*|node()" />
         </opção>
     </xsl:template>
 
-    <xsl:template match="html/body//noscript">
+    <xsl:template match="/html/body//noscript">
         <sem-script>
             <xsl:apply-templates select="@*|node()" />
         </sem-script>
     </xsl:template>
-    <xsl:template match="html/body//sup">
+    <xsl:template match="/html/body//sup">
         <sobrescrito>
             <xsl:apply-templates select="@*|node()" />
         </sobrescrito>
     </xsl:template>
-    <xsl:template match="html/body//iframe">
+    <xsl:template match="/html/body//iframe">
         <subpágina>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1283,24 +1283,24 @@
             <xsl:apply-templates select="@*|node()" />
         </subpágina>
     </xsl:template>
-    <xsl:template match="html/body//u">
+    <xsl:template match="/html/body//u">
         <sublinhado>
             <xsl:apply-templates select="@*|node()" />
         </sublinhado>
     </xsl:template>
-    <xsl:template match="html/body//sub">
+    <xsl:template match="/html/body//sub">
         <subscrito>
             <xsl:apply-templates select="@*|node()" />
         </subscrito>
     </xsl:template>
 
     <!-- Tabelas -->
-    <xsl:template match="html/body//table">
+    <xsl:template match="/html/body//table">
         <tabela>
             <xsl:apply-templates select="@*|node()" />
         </tabela>
     </xsl:template>
-    <xsl:template match="html/body//table/colgroup">
+    <xsl:template match="/html/body//table/colgroup">
         <grupo-colunas>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1319,7 +1319,7 @@
             <xsl:apply-templates select="node()" />
         </grupo-colunas>
     </xsl:template>
-    <xsl:template match="html/body//table/colgroup/col">
+    <xsl:template match="/html/body//table/colgroup/col">
         <coluna>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1338,32 +1338,32 @@
             <xsl:apply-templates select="node()" />
         </coluna>
     </xsl:template>
-    <xsl:template match="html/body//table/thead">
+    <xsl:template match="/html/body//table/thead">
         <cabeça-tabela>
             <xsl:apply-templates select="@*|node()" />
         </cabeça-tabela>
     </xsl:template>
-    <xsl:template match="html/body//table/thead/tr">
+    <xsl:template match="/html/body//table/thead/tr">
         <linha>
             <xsl:apply-templates select="@*|node()" />
         </linha>
     </xsl:template>
-    <xsl:template match="html/body//table/thead/tr/th">
+    <xsl:template match="/html/body//table/thead/tr/th">
         <célula>
             <xsl:apply-templates select="@*|node()" />
         </célula>
     </xsl:template>
-    <xsl:template match="html/body//table/tbody">
+    <xsl:template match="/html/body//table/tbody">
         <corpo-tabela>
             <xsl:apply-templates select="@*|node()" />
         </corpo-tabela>
     </xsl:template>
-    <xsl:template match="html/body//table/tbody/tr">
+    <xsl:template match="/html/body//table/tbody/tr">
         <linha>
             <xsl:apply-templates select="@*|node()" />
         </linha>
     </xsl:template>
-    <xsl:template match="html/body//table/tbody/tr/td">
+    <xsl:template match="/html/body//table/tbody/tr/td">
         <célula>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -1392,60 +1392,60 @@
             <xsl:apply-templates select="node()" />
         </célula>
     </xsl:template>
-    <xsl:template match="html/body//table/tfoot">
+    <xsl:template match="/html/body//table/tfoot">
         <rodapé>
             <xsl:apply-templates select="@*|node()" />
         </rodapé>
     </xsl:template>
-    <xsl:template match="html/body//table/caption">
+    <xsl:template match="/html/body//table/caption">
         <título>
             <xsl:apply-templates select="@*|node()" />
         </título>
     </xsl:template>
 
-    <xsl:template match="html/body//kbd">
+    <xsl:template match="/html/body//kbd">
         <teclado>
             <xsl:apply-templates select="@*|node()" />
         </teclado>
     </xsl:template>
-    <xsl:template match="html/body//time">
+    <xsl:template match="/html/body//time">
         <tempo>
             <xsl:apply-templates select="@*|node()" />
         </tempo>
     </xsl:template>
-    <xsl:template match="html/body//small">
+    <xsl:template match="/html/body//small">
         <texto-pequeno>
             <xsl:apply-templates select="@*|node()" />
         </texto-pequeno>
     </xsl:template>
 
     <!-- Títulos -->
-    <xsl:template match="html/body//h1">
+    <xsl:template match="/html/body//h1">
         <título1>
             <xsl:apply-templates select="@*|node()" />
         </título1>
     </xsl:template>
-    <xsl:template match="html/body//h2">
+    <xsl:template match="/html/body//h2">
         <título2>
             <xsl:apply-templates select="@*|node()" />
         </título2>
     </xsl:template>
-    <xsl:template match="html/body//h3">
+    <xsl:template match="/html/body//h3">
         <título3>
             <xsl:apply-templates select="@*|node()" />
         </título3>
     </xsl:template>
-    <xsl:template match="html/body//h4">
+    <xsl:template match="/html/body//h4">
         <título4>
             <xsl:apply-templates select="@*|node()" />
         </título4>
     </xsl:template>
-    <xsl:template match="html/body//h5">
+    <xsl:template match="/html/body//h5">
         <título5>
             <xsl:apply-templates select="@*|node()" />
         </título5>
     </xsl:template>
-    <xsl:template match="html/body//h6">
+    <xsl:template match="/html/body//h6">
         <título6>
             <xsl:apply-templates select="@*|node()" />
         </título6>
