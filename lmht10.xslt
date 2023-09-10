@@ -648,6 +648,11 @@
             <xsl:apply-templates select="@*|node()" />
         </span>
     </xsl:template>
+    <xsl:template match="/lmht/corpo//escatel">
+        <slot>
+            <xsl:apply-templates select="@*|node()" />
+        </slot>
+    </xsl:template>
     <xsl:template match="/lmht/corpo//etiqueta">
         <label>
             <xsl:for-each select="@*">
@@ -706,7 +711,7 @@
             <xsl:apply-templates select="@*|node()" />
         </figure>
     </xsl:template>
-    <xsl:template match="/lmht/corpo//figura/descricao|/lmht/corpo//figura/descriçao|/lmht/corpo//figura/descrição">
+    <xsl:template match="/lmht/corpo//figura/descricao|/lmht/corpo//figura/descrição">
         <figcaption>
             <xsl:apply-templates select="@*|node()" />
         </figcaption>
@@ -866,6 +871,11 @@
         </legend>
     </xsl:template>
 
+    <xsl:template match="/lmht/corpo//grupo-titulos|/lmht/corpo//grupo-títulos">
+        <hgroup>
+            <xsl:apply-templates select="@*|node()" />
+        </hgroup>
+    </xsl:template>
     <xsl:template match="/lmht/corpo//imagem">
         <img>
             <xsl:for-each select="@*">
@@ -1208,10 +1218,20 @@
             <xsl:apply-templates select="node()" />
         </source>
     </xsl:template>
+    <xsl:template match="/lmht/corpo//resultado">
+        <output>
+            <xsl:apply-templates select="@*|node()" />
+        </output>
+    </xsl:template>
     <xsl:template match="/lmht/corpo//riscado">
         <s>
             <xsl:apply-templates select="@*|node()" />
         </s>
+    </xsl:template>
+    <xsl:template match="/lmht/corpo//rodape|/lmht/corpo/rodapé">
+        <footer>
+            <xsl:apply-templates select="@*|node()" />
+        </footer>
     </xsl:template>
     <xsl:template match="/lmht/corpo//script">
         <script>

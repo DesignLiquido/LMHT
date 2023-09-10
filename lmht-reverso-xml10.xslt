@@ -633,6 +633,11 @@
             <xsl:apply-templates select="@*|node()" />
         </envelope-texto>
     </xsl:template>
+    <xsl:template match="/html/body//slot">
+        <escatel>
+            <xsl:apply-templates select="@*|node()" />
+        </escatel>
+    </xsl:template>
     <xsl:template match="/html/body//label">
         <etiqueta>
             <xsl:for-each select="@*">
@@ -845,11 +850,16 @@
             <xsl:apply-templates select="node()" />
         </campo>
     </xsl:template>
-    
     <xsl:template match="/html/body//form/legend">
         <título>
             <xsl:apply-templates select="@*|node()" />
         </título>
+    </xsl:template>
+
+    <xsl:template match="/html/body//hgroup">
+        <grupo-títulos>
+            <xsl:apply-templates select="@*|node()" />
+        </grupo-títulos>
     </xsl:template>
     <xsl:template match="/html/body//img">
         <imagem>
@@ -1169,10 +1179,20 @@
             <xsl:apply-templates select="node()" />
         </recurso>
     </xsl:template>
+    <xsl:template match="/html/body//output">
+        <resultado>
+            <xsl:apply-templates select="@*|node()" />
+        </resultado>
+    </xsl:template>
     <xsl:template match="/html/body//s">
         <riscado>
             <xsl:apply-templates select="@*|node()" />
         </riscado>
+    </xsl:template>
+    <xsl:template match="/html/body//footer">
+        <rodapé>
+            <xsl:apply-templates select="@*|node()" />
+        </rodapé>
     </xsl:template>
     <xsl:template match="/html/body//script">
         <script>
