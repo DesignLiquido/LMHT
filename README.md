@@ -132,7 +132,6 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | corpo                                                                                                                                   | body       |
 | [corpo-tabela](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22corpo-tabela%22)                                                 | tbody      |
 | [definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                                             | dfn        |
-| [definiçao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                                             | dfn        |
 | [definição](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22defini%C3%A7%C3%A3o%22)                                             | dfn        |
 | [detalhes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22detalhes%22)                                                         | details    |
 | divisao                                                                                                                                 | div        |
@@ -164,11 +163,8 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [linha](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22linha%22)                                                               | tr         |
 | [linha-horizontal](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22linha-horizontal%22)                                         | hr         |
 | [lista-definicoes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es%22)                               | dl         |
-| [lista-definiçoes](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es%22)                               | dl         |
 | [lista-definições](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es%22)                               | dl         |
 | [lista-definicoes/definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
-| [lista-definicoes/definição](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
-| [lista-definições/definicao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
 | [lista-definições/definição](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-defini%C3%A7%C3%B5es-defini%C3%A7%C3%A3o%22) | dd         |
 | [lista-numerada](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-numerada%22)                                             | ol         |
 | [lista-pesquisavel](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22lista-pesquis%C3%A1vel%22)                                  | datalist   |
@@ -183,7 +179,6 @@ Mais detalhes sobre as estruturas podem ser encontrados [na nossa Wiki](https://
 | [negrito](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22negrito%22)                                                           | strong     |
 | [objeto](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22objeto%22)                                                             | object     |
 | [opcao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22op%C3%A7%C3%A3o%22)                                                     | option     |
-| [opçao](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22op%C3%A7%C3%A3o%22)                                                     | option     |
 | [opção](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22op%C3%A7%C3%A3o%22)                                                     | option     |
 | [p](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22paragrafo%22)                                                               | p          |
 | [paragrafo](https://github.com/DesignLiquido/LMHT/wiki/Estrutura-%22paragrafo%22)                                                       | p          |
