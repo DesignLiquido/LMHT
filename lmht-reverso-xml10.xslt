@@ -4,13 +4,28 @@
 
     <!-- Seção de _templates_ utilitários -->
     <!-- Os _templates_ abaixo normalmente trabalham com transcrição de valores de atributos LMHT para HTML -->
-    <xsl:template name="ProcessarTargets">
-        <xsl:param name="Target" />
+    <xsl:template name="ProcessarInputTypes">
+        <xsl:param name="InputType" />
         <xsl:choose>
-            <xsl:when test="$Target = '_self'">_mesmo</xsl:when>
-            <xsl:when test="$Target = '_blank'">_novo</xsl:when>
-            <xsl:when test="$Target = '_parent'">_pai</xsl:when>
-            <xsl:when test="$Target = '_top'">_topo</xsl:when>
+            <xsl:when test="$InputType = 'checkbox'">caixa-checagem</xsl:when>
+            <xsl:when test="$InputType = 'color'">cor</xsl:when>
+            <xsl:when test="$InputType = 'date'">data</xsl:when>
+            <xsl:when test="$InputType = 'email'">e-mail</xsl:when>
+            <xsl:when test="$InputType = 'file'">arquivo</xsl:when>
+            <xsl:when test="$InputType = 'hidden'">escondido</xsl:when>
+            <xsl:when test="$InputType = 'image'">imagem</xsl:when>
+            <xsl:when test="$InputType = 'month'">mês</xsl:when>
+            <xsl:when test="$InputType = 'number'">número</xsl:when>
+            <xsl:when test="$InputType = 'password'">senha</xsl:when>
+            <xsl:when test="$InputType = 'radio'">rádio</xsl:when>
+            <xsl:when test="$InputType = 'range'">intervalo</xsl:when>
+            <xsl:when test="$InputType = 'reset'">reiniciar</xsl:when>
+            <xsl:when test="$InputType = 'search'">pesquisar</xsl:when>
+            <xsl:when test="$InputType = 'submit'">enviar</xsl:when>
+            <xsl:when test="$InputType = 'tel'">telefone</xsl:when>
+            <xsl:when test="$InputType = 'text'">texto</xsl:when>
+            <xsl:when test="$InputType = 'time'">hora</xsl:when>
+            <xsl:when test="$InputType = 'week'">semana</xsl:when>
         </xsl:choose>
     </xsl:template>
     <xsl:template name="ProcessarReferrerPolicy">
@@ -50,6 +65,15 @@
             <xsl:when test="$Shape = 'rect'">retangular</xsl:when>
             <xsl:when test="$Shape = 'circle'">circular</xsl:when>
             <xsl:when test="$Shape = 'poly'">polígono</xsl:when>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template name="ProcessarTargets">
+        <xsl:param name="Target" />
+        <xsl:choose>
+            <xsl:when test="$Target = '_self'">_mesmo</xsl:when>
+            <xsl:when test="$Target = '_blank'">_novo</xsl:when>
+            <xsl:when test="$Target = '_parent'">_pai</xsl:when>
+            <xsl:when test="$Target = '_top'">_topo</xsl:when>
         </xsl:choose>
     </xsl:template>
 
@@ -842,7 +866,9 @@
                     </xsl:when>
                     <xsl:when test="name() = 'valor'">
                         <xsl:attribute name="value">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarInputTypes">
+                                <xsl:with-param name="InputType" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
                 </xsl:choose>

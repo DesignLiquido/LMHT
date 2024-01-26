@@ -60,6 +60,30 @@
             <xsl:when test="$Relacionamento = 'sem-janela-abertura'">noopener</xsl:when>
         </xsl:choose>
     </xsl:template>
+    <xsl:template name="ProcessarTiposCampos">
+        <xsl:param name="TipoCampo" />
+        <xsl:choose>
+            <xsl:when test="$TipoCampo = 'caixa-checagem'">checkbox</xsl:when>
+            <xsl:when test="$TipoCampo = 'cor'">color</xsl:when>
+            <xsl:when test="$TipoCampo = 'data'">date</xsl:when>
+            <xsl:when test="$TipoCampo = 'e-mail'">email</xsl:when>
+            <xsl:when test="$TipoCampo = 'arquivo'">file</xsl:when>
+            <xsl:when test="$TipoCampo = 'escondido'">hidden</xsl:when>
+            <xsl:when test="$TipoCampo = 'imagem'">image</xsl:when>
+            <xsl:when test="$TipoCampo = 'mes' or $TipoCampo = 'mês'">month</xsl:when>
+            <xsl:when test="$TipoCampo = 'numero' or $TipoCampo = 'número'">number</xsl:when>
+            <xsl:when test="$TipoCampo = 'senha'">password</xsl:when>
+            <xsl:when test="$TipoCampo = 'rádio'">radio</xsl:when>
+            <xsl:when test="$TipoCampo = 'intervalo'">range</xsl:when>
+            <xsl:when test="$TipoCampo = 'reiniciar'">reset</xsl:when>
+            <xsl:when test="$TipoCampo = 'pesquisar'">search</xsl:when>
+            <xsl:when test="$TipoCampo = 'enviar'">submit</xsl:when>
+            <xsl:when test="$TipoCampo = 'telefone'">tel</xsl:when>
+            <xsl:when test="$TipoCampo = 'texto'">text</xsl:when>
+            <xsl:when test="$TipoCampo = 'hora'">time</xsl:when>
+            <xsl:when test="$TipoCampo = 'semana'">week</xsl:when>
+        </xsl:choose>
+    </xsl:template>
 
     <!-- Atributos independentes de tags (globais) -->
     <!-- Por algum motivo, adicionar `id` aqui não funciona. -->
