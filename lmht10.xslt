@@ -63,6 +63,7 @@
     <xsl:template name="ProcessarTiposCampos">
         <xsl:param name="TipoCampo" />
         <xsl:choose>
+            <xsl:when test="$TipoCampo = 'botao' or $TipoCampo = 'botão'">button</xsl:when>
             <xsl:when test="$TipoCampo = 'caixa-checagem'">checkbox</xsl:when>
             <xsl:when test="$TipoCampo = 'cor'">color</xsl:when>
             <xsl:when test="$TipoCampo = 'data'">date</xsl:when>

@@ -7,6 +7,7 @@
     <xsl:template name="ProcessarInputTypes">
         <xsl:param name="InputType" />
         <xsl:choose>
+            <xsl:when test="$InputType = 'button'">botão</xsl:when>
             <xsl:when test="$InputType = 'checkbox'">caixa-checagem</xsl:when>
             <xsl:when test="$InputType = 'color'">cor</xsl:when>
             <xsl:when test="$InputType = 'date'">data</xsl:when>
