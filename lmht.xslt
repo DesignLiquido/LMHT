@@ -877,11 +877,13 @@
                     </xsl:when>
                     <xsl:when test="name() = 'tipo'">
                         <xsl:attribute name="type">
-                            <xsl:value-of select="." />
+                            <xsl:call-template name="ProcessarTiposCampos">
+                                <xsl:with-param name="TipoCampo" select="." />
+                            </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'value'">
-                        <xsl:attribute name="valor">
+                    <xsl:when test="name() = 'valor'">
+                        <xsl:attribute name="value">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>

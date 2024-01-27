@@ -862,14 +862,14 @@
                     </xsl:when>
                     <xsl:when test="name() = 'type'">
                         <xsl:attribute name="tipo">
-                            <xsl:value-of select="." />
-                        </xsl:attribute>
-                    </xsl:when>
-                    <xsl:when test="name() = 'valor'">
-                        <xsl:attribute name="value">
                             <xsl:call-template name="ProcessarInputTypes">
                                 <xsl:with-param name="InputType" select="." />
                             </xsl:call-template>
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'value'">
+                        <xsl:attribute name="valor">
+                            <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
                 </xsl:choose>

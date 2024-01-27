@@ -867,8 +867,8 @@
                             </xsl:call-template>
                         </xsl:attribute>
                     </xsl:when>
-                    <xsl:when test="name() = 'valor'">
-                        <xsl:attribute name="value">
+                    <xsl:when test="name() = 'value'">
+                        <xsl:attribute name="valor">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
