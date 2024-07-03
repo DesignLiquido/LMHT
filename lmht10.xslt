@@ -183,29 +183,41 @@
             <xsl:apply-templates select="node()" />
         </base>
     </xsl:template>
-    <xsl:template match="/lmht/cabeca/estilo|/lmht/cabeça/estilo">
-        <style>
-            <xsl:apply-templates select="@*|node()" />
-        </style>
-    </xsl:template>
-    <!-- Estrutura style é apenas replicada para ser usada por FolEs. -->
+    <!-- Estrutura `style` é apenas replicada com o CSS que possui dentro. -->
     <!-- https://github.com/DesignLiquido/FolEs -->
     <xsl:template match="/lmht/cabeca/style|/lmht/cabeça/style">
         <style>
             <xsl:apply-templates select="@*|node()" />
         </style>
     </xsl:template>
+    <!-- Estrutura `estilo` é apenas replicada para ser usada por FolEs. -->
+    <!-- https://github.com/DesignLiquido/FolEs -->
+    <xsl:template match="/lmht/cabeca/estilo|/lmht/cabeça/estilo">
+        <estilo>
+            <xsl:apply-templates select="@*|node()" />
+        </estilo>
+    </xsl:template>
     <xsl:template match="/lmht/cabeca/meta|/lmht/cabeça/meta">
         <meta>
             <xsl:for-each select="@*">
                 <xsl:choose>
-                    <xsl:when test="name() = 'nome'">
-                        <xsl:attribute name="name">
+                    <xsl:when test="name() = 'codificacao' or name() = 'codificação'">
+                        <xsl:attribute name="charset">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'conteudo' or name() = 'conteúdo'">
                         <xsl:attribute name="content">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'diretiva-http'">
+                        <xsl:attribute name="http-equiv">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'nome'">
+                        <xsl:attribute name="name">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>

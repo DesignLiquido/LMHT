@@ -102,7 +102,7 @@
         </xsl:attribute>
     </xsl:template>
     <xsl:template match="@dir">
-        <xsl:attribute name="@direção-texto">
+        <xsl:attribute name="direção-texto">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
@@ -122,7 +122,7 @@
         </xsl:attribute>
     </xsl:template>    
     <xsl:template match="@tabindex">
-        <xsl:attribute name="@índice-tab">
+        <xsl:attribute name="índice-tab">
             <xsl:value-of select="." />
         </xsl:attribute>
     </xsl:template>
@@ -175,22 +175,33 @@
             <xsl:apply-templates select="node()" />
         </base-ligações>
     </xsl:template>
+    <!-- Tag `style` não é traduzida. -->
     <xsl:template match="/html/style">
-        <estilo>
+        <style>
             <xsl:apply-templates select="@*|node()" />
-        </estilo>
+        </style>
     </xsl:template>
     <xsl:template match="/html/head/meta">
         <meta>
             <xsl:for-each select="@*">
                 <xsl:choose>
-                    <xsl:when test="name() = 'name'">
-                        <xsl:attribute name="nome">
+                    <xsl:when test="name() = 'charset'">
+                        <xsl:attribute name="codificação">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>
                     <xsl:when test="name() = 'content'">
                         <xsl:attribute name="conteúdo">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'http-equiv'">
+                        <xsl:attribute name="diretiva-http">
+                            <xsl:value-of select="." />
+                        </xsl:attribute>
+                    </xsl:when>
+                    <xsl:when test="name() = 'name'">
+                        <xsl:attribute name="nome">
                             <xsl:value-of select="." />
                         </xsl:attribute>
                     </xsl:when>

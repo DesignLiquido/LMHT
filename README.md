@@ -91,6 +91,8 @@ LMHT transforma para HTML5. _Tags_ não compatíveis, que existam apenas em HTML
 
 Não todos os valores de atributos são traduzidos. Quando há essa tradução, isso normalmente é especificado na Wiki de cada estrutura.
 
+A estrutura `<style>` não é traduzida. O motivo disso é que `<estilo>` é usada para tradução, mas o que se espera dentro de `<estilo>` é código em [FolEs](https://github.com/DesignLiquido/FolEs). 
+
 ## Mapeamentos entre estruturas LMHT e _tags_ HTML
 
 Algumas _tags_ HTML por ora não serão mapeadas:
