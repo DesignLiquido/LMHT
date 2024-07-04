@@ -1053,7 +1053,7 @@
             <xsl:apply-templates select="@*|node()" />
         </lista-simples>
     </xsl:template>
-    <xsl:template match="/html/body//ol/li|html/body//ul/li">
+    <xsl:template match="/html/body//ul/li|html/body//ol/li">
         <item-lista>
             <xsl:apply-templates select="node()" />
         </item-lista>
