@@ -154,7 +154,7 @@
             <xsl:apply-templates select="@*|node()" />
         </cabeça>
     </xsl:template>
-    <xsl:template match="/html/base">
+    <xsl:template match="/html/head/base">
         <base-ligações>
             <xsl:for-each select="@*">
                 <xsl:choose>
@@ -176,7 +176,7 @@
         </base-ligações>
     </xsl:template>
     <!-- Tag `style` não é traduzida. -->
-    <xsl:template match="/html/style">
+    <xsl:template match="/html/head/style">
         <style>
             <xsl:apply-templates select="@*|node()" />
         </style>
