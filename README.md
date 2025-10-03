@@ -351,3 +351,9 @@ xmlschema = etree.XMLSchema(xmlschema_doc)
 xml_doc = etree.parse("exemplo.lmht")
 print(xmlschema.validate(xml_doc))
 ```
+
+## Quem já Contribuiu
+
+<a href="https://github.com/DesignLiquido/LMHT/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=DesignLiquido/LMHT" />
+</a>
