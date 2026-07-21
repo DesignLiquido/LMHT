@@ -151,7 +151,17 @@
     </xsl:template>
 
     <xsl:template match="/lmht">
+        <xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;
+</xsl:text>
         <html>
+            <xsl:attribute name="lang">
+                <xsl:choose>
+                    <xsl:when test="@idioma">
+                        <xsl:value-of select="@idioma" />
+                    </xsl:when>
+                    <xsl:otherwise>pt</xsl:otherwise>
+                </xsl:choose>
+            </xsl:attribute>
             <xsl:apply-templates select="node()" />
         </html>
     </xsl:template>
